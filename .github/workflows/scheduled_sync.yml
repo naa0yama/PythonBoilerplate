@@ -1,0 +1,179 @@
+# Follow Changes of Forked/Upstream Repository.
+#
+
+name: Merge upstream branches
+
+# Triggers the action as scheduled
+on:
+  # Runs on 10 minutes past every hour
+  #schedule:
+  #   Ref:
+  #   - https://help.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events-schedule
+  #   - https://crontab.guru/examples.html
+  #   Cron format:
+  #         ┌───────────── minute (0 - 59)
+  #         │ ┌───────────── hour (0 - 23)
+  #         │ │ ┌───────────── day of the month (1 - 31)
+  #         │ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+  #         │ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+  #         │ │ │ │ │
+  #         │ │ │ │ │
+  #         │ │ │ │ │
+  #         * * * * *
+  #- cron: '10 */1 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  merge:
+    name: Merge Job
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+      matrix:
+        python-version:
+          - 3.8
+    env:
+      OS: ubuntu-latest
+      PYTHON: ${{ matrix.python-version }}
+      NAME: GitHub Action
+      EMAIL: action@github.com
+      REPO_FORK: https://github.com/naa0yama/pythonboilerplate.git
+      BRUNCH_NAME: upstream-config-merge
+      SOURCE_DIR_NAME: upstream
+      ORIGIN_DEFAULT_BRUNCH: main
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Cache Python
+        id: python_cache_id
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.pythonLocation }}
+          key: python-${{ env.pythonLocation }}-v${{ matrix.python-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/.github/workflows/projmr/poetry.lock')) }}
+
+      - name: git settings
+        run: |
+          set -x
+
+          git config --global user.name "${NAME}"
+          git config --global user.email "${EMAIL}"
+
+          # Pass the --rebase-merges option to git rebase by default
+          git config --global pull.rebase merges
+
+          # "git checkout master" is unnecessary, already here by default
+          git pull --unshallow  # this option is very important, you would get
+                                # complains about unrelated histories without it.
+                                # (but actions/checkout@v2 can also be instructed
+                                # to fetch all git depth right from the start)
+
+      - name: git clone upstream
+        run: |
+          set -x
+
+          # Add the repo which you forked to the remote and name it as "upstream"
+          git fetch -v
+          git clone "${REPO_FORK}" "${{ github.workspace }}/${SOURCE_DIR_NAME}"
+
+      - name: Install requirements
+        if: steps.python_cache_id.outputs.cache-hit != 'true'
+        run: |
+          set -x
+
+          cd ${{ github.workspace }}/${SOURCE_DIR_NAME}/.github/workflows/projmr
+          pip install .
+
+      - name: checkout -b
+        run: |
+          set -x
+
+          cd ${{ github.workspace }}
+          if test -e ".git/refs/remotes/origin/${BRUNCH_NAME}"
+          then
+            git checkout -b "${BRUNCH_NAME}" "origin/${BRUNCH_NAME}"
+          else
+            git checkout -b "${BRUNCH_NAME}"
+          fi
+
+      - name: pyproject.toml merge generate
+        run: |
+          set -x
+
+          projmrcli "${{ github.workspace }}/pyproject.toml"
+
+      - name: commit & push
+        run: |
+          set -x
+
+          #  ".github/*"
+          # (refusing to allow a GitHub App to create or update workflow `.github/workflows/projmr/upstream` without `workflows` permission)
+          SYNC_FILES_OR_DIRS=(
+            ".vscode/*"
+            "pyproject.toml"
+            "renovate.json"
+            "setup.cfg"
+            "tox.ini"
+          )
+
+          for add_path in ${SYNC_FILES_OR_DIRS[@]}
+          do
+            echo -e "\n\n"
+            echo "add_path: ${add_path}"
+            if test "pyproject.toml" != "${add_path}"
+            then
+              cp -av "./${SOURCE_DIR_NAME}/${add_path}" "${add_path}"
+            fi
+            git add --intent-to-add "${add_path}"
+
+            if ! git diff --exit-code --quiet "${add_path}"
+            then
+              git add "${add_path}"
+              git commit -m "Config update file: ${add_path}"
+            fi
+          done
+
+          rm -rf "./${SOURCE_DIR_NAME}"
+          git push -u origin "${BRUNCH_NAME}"
+
+      - name: Create PullRequest
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const common_params = {
+                owner: context.repo.owner,
+                repo: context.repo.repo
+            }
+            const pull_params = {
+                head: context.repo.owner + ':' + process.env.BRUNCH_NAME,
+                base: process.env.ORIGIN_DEFAULT_BRUNCH,
+                ...common_params
+            }
+            const pulls_list_params = {
+                state: "open",
+                ...pull_params
+            }
+            console.log("call pulls.list:")
+            console.log(pulls_list_params)
+
+            // process.env.BRUNCH_NAME ブランチをheadとするPRの一覧を取得する
+            github.pulls.list(pulls_list_params).then(list_res => {
+                // 該当するPRがなければPRを作成する
+                // 既にPRが立てられている場合はpushした時点でPRに反映されるので何もしなくて良い
+                if (list_res.data.length === 0) {
+                    const pulls_create_params = {
+                        title: "fork 元の差分を反映",
+                        ...pull_params
+                    }
+                    console.log("call pulls.create:")
+                    console.log(pulls_create_params)
+                    github.pulls.create(pulls_create_params)
+                }
+            })

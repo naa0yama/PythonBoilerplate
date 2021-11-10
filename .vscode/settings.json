@@ -1,0 +1,75 @@
+{
+  /*****************************************************************************
+   * VSCode の設定
+   ****************************************************************************/
+  // python のファイルの設定
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSaveMode": "file",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  /*****************************************************************************
+   * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
+   * この設定を変更すると、再起動が必要になります。
+   ****************************************************************************/
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.venv/**": true,
+    "**/.tox/**": true
+  },
+  // 行にカラー ブロックではなく実際の文字を表示します。
+  "editor.minimap.renderCharacters": false,
+  // 表示領域をミニマップで常にハイライト
+  "editor.minimap.showSlider": "always",
+  // 選択行を行番号含めすべてハイライト
+  "editor.renderLineHighlight": "all",
+  // 半角スペースを常に表示
+  "editor.renderWhitespace": "all",
+  // 指定文字で縦ルーラーを表示する
+  "editor.rulers": [80, 100, 120],
+  /*****************************************************************************
+   * Python の設定
+   ****************************************************************************/
+  "autoDocstring.docstringFormat": "google",
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=99"],
+  "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
+  "python.venvFolders": ["envs", ".direnv", ".venv"],
+  "python.venvPath": "${workspaceFolder}/.venv",
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+  /*****************************************************************************
+   * Python の設定 linting
+   ****************************************************************************/
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.flake8Enabled": true,
+  /*****************************************************************************
+   * Python の設定 testing
+   ****************************************************************************/
+  "python.testing.unittestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.pytestEnabled": true,
+  /*****************************************************************************
+   * Python の設定 mypy
+   ****************************************************************************/
+  "python.linting.mypyArgs": [],
+  "python.linting.mypyCategorySeverity.error": "Error",
+  "python.linting.mypyCategorySeverity.note": "Information",
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
+  /****************************************************************************/
+  /*****************************************************************************
+   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
+   ****************************************************************************/
+  "extensions.showRecommendationsOnlyOnDemand": false
+}

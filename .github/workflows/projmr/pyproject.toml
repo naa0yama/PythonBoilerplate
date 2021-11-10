@@ -1,0 +1,22 @@
+[tool.poetry]
+name                       = "projmr"
+version                    = "0.1.0"
+description                = "pyproject.toml を merge するやつ"
+authors                    = [
+    "Naoki Aoyama"
+]
+license                    = "AGPL-3.0"
+
+[tool.poetry.dependencies]
+python                     = "~3.8"
+tomlkit                    = "~0.7.0"
+
+[tool.poetry.scripts]
+projmrcli = "projmr.cli:main"
+
+[build-system]
+requires                   = [
+    "poetry-core>=1.0.0",
+    "setuptools",
+]
+build-backend              = "poetry.core.masonry.api"
