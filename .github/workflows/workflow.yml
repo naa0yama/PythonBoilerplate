@@ -35,7 +35,7 @@ jobs:
           path: .tox
           # setup.cfg and pyproject.toml have versioning info that would
           # impact the tox environment.
-          key: tox-${{ matrix.python }}-${{ hashFiles('pyproject.toml', 'setup.cfg') }}
+          key: tox-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'setup.cfg') }}
 
       - name: Run tox
         run: tox
