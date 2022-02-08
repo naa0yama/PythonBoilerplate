@@ -20,23 +20,23 @@ jobs:
         uses: actions/setup-python@v2.3.2
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Cache Python
-        id: python_cache_id
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ env.pythonLocation }}
-            ${{ github.workspace }}/.tox
-          key: python-${{ env.pythonLocation }}-v${{ matrix.python-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/tox.ini')) }}-${{ hashFiles(format('{0}{1}', github.workspace, '/setup.cfg')) }}-${{ hashFiles(format('{0}{1}', github.workspace, '/pyproject.toml')) }}
+          cache: 'pip'
 
       - name: Install dependencies
-        if: steps.python_cache_id.outputs.cache-hit != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install tox tox-gh-actions
 
-      - name: Test with tox
+      - name: Cache tox environments
+        id: cache-tox
+        uses: actions/cache@v2
+        with:
+          path: .tox
+          # setup.cfg and pyproject.toml have versioning info that would
+          # impact the tox environment.
+          key: tox-${{ matrix.python }}-${{ hashFiles('pyproject.toml', 'setup.cfg') }}
+
+      - name: Run tox
         run: tox
 
       - name: Upload coverage to Codecov
