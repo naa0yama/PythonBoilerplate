@@ -32,7 +32,7 @@ ipykernel                  = "~6.9.0"
 isort                      = "~5.10.0"
 mypy                       = "~0.941"
 pip                        = "^22.0.0"
-pytest                     = "~7.0.0"
+pytest                     = "~7.1.0"
 pytest-cov                 = "~3.0.0"
 tox                        = "~3.24.0"
 
