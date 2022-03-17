@@ -9,7 +9,7 @@ license                    = "AGPL-3.0"
 
 [tool.poetry.dependencies]
 python                     = "~3.8"
-tomlkit                    = "~0.8.0"
+tomlkit                    = "~0.10.0"
 
 [tool.poetry.scripts]
 projmrcli = "projmr.cli:main"
