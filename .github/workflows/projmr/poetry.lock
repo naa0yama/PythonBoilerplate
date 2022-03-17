@@ -1,6 +1,6 @@
 [[package]]
 name = "tomlkit"
-version = "0.8.0"
+version = "0.10.0"
 description = "Style preserving TOML library"
 category = "main"
 optional = false
@@ -9,10 +9,10 @@ python-versions = ">=3.6,<4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.8"
-content-hash = "15c3c1b8378333addb055fd79ac20dafa60cb8e18141466de183aacf1b398c98"
+content-hash = "ab0066c207f45a7836f4a488f0e32d78a624adf72e8c17eb7f5cf036748217ed"
 
 [metadata.files]
 tomlkit = [
-    {file = "tomlkit-0.8.0-py3-none-any.whl", hash = "sha256:b824e3466f1d475b2b5f1c392954c6cb7ea04d64354ff7300dc7c14257dc85db"},
-    {file = "tomlkit-0.8.0.tar.gz", hash = "sha256:29e84a855712dfe0e88a48f6d05c21118dbafb283bb2eed614d46f80deb8e9a1"},
+    {file = "tomlkit-0.10.0-py3-none-any.whl", hash = "sha256:cac4aeaff42f18fef6e07831c2c2689a51df76cf2ede07a6a4fa5fcb83558870"},
+    {file = "tomlkit-0.10.0.tar.gz", hash = "sha256:d99946c6aed3387c98b89d91fb9edff8f901bf9255901081266a84fb5604adcd"},
 ]
