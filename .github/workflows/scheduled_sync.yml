@@ -53,7 +53,7 @@ jobs:
 
       - name: Cache Python
         id: python_cache_id
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
           key: python-${{ env.pythonLocation }}-v${{ matrix.python-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/.github/workflows/projmr/poetry.lock')) }}
