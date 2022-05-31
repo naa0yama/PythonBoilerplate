@@ -1,10 +1,12 @@
 {
   "recommendations": [
-    "esbenp.prettier-vscode",
-    "ms-python.python",
-    "njpwerner.autodocstring",
-    "bungcip.better-toml",
-    "eamodio.gitlens",
-    "oderwat.indent-rainbow"
+    "wholroyd.jinja", //            Jinja
+    "njpwerner.autodocstring", //   autoDocstring - Python Docstring Generator
+    "bungcip.better-toml", //       Better TOML
+    "oderwat.indent-rainbow", //    indent-rainbow
+    "ms-toolsai.jupyter", //        Jupyter
+    "esbenp.prettier-vscode", //    Prettier - Code formatter
+    "ms-python.vscode-pylance", //  Pylance
+    "ms-python.python", //          Python
   ]
 }

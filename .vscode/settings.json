@@ -32,19 +32,28 @@
   // 半角スペースを常に表示
   "editor.renderWhitespace": "all",
   // 指定文字で縦ルーラーを表示する
-  "editor.rulers": [80, 100, 120],
+  "editor.rulers": [
+    80,
+    100,
+    120
+  ],
   /*****************************************************************************
    * Python の設定
    ****************************************************************************/
   "autoDocstring.docstringFormat": "google",
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--line-length=99"],
-  "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
-  "python.venvFolders": ["envs", ".direnv", ".venv"],
-  "python.venvPath": "${workspaceFolder}/.venv",
-  "python.pythonPath": "${workspaceFolder}/.venv/bin/python",
+  "python.formatting.blackArgs": [
+    "--line-length=99"
+  ],
+  "python.formatting.blackPath": "black",
+  "python.venvFolders": [
+    "envs",
+    ".direnv",
+    ".venv"
+  ],
   "python.envFile": "${workspaceFolder}/.env",
-  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+  "python.sortImports.path": "isort",
+  "python.experiments.enabled": false,
   /*****************************************************************************
    * Python の設定 linting
    ****************************************************************************/
@@ -66,7 +75,7 @@
   "python.linting.mypyCategorySeverity.error": "Error",
   "python.linting.mypyCategorySeverity.note": "Information",
   "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
+  "python.linting.mypyPath": "mypy",
   /****************************************************************************/
   /*****************************************************************************
    * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
