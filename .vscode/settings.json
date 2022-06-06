@@ -45,7 +45,7 @@
   "python.formatting.blackArgs": [
     "--line-length=99"
   ],
-  "python.formatting.blackPath": "black",
+  "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
   "python.venvFolders": [
     "envs",
     ".direnv",
