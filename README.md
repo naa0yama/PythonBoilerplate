@@ -101,14 +101,11 @@ poetry completions fish > (brew --prefix)/share/fish/vendor_completions.d/poetry
 
 ### 設定
 
-* ~~プロジェクト内に venv が作成されないと VSCode などで利用するには都合が悪いため、 poetry のでデフォルト設定を変更します~~
+プロジェクト内に `.venv` が作成されないと VSCode などで利用するには都合が悪いため、プロジェクトディレクトリーでの設定を変更します
 
-2022/06/17 にリリースされたバージョンで `python.pythonPath` などが非推奨となったため poetry で自動生成される venv を使うため、設定を削除
-
-` poetry config --list` を実行して `virtualenvs.in-project` が `true` の場合 は下記を実行してください
 
 ```shell
-poetry config virtualenvs.in-project false
+poetry config virtualenvs.in-project true --local
 
 ```
 
