@@ -12,7 +12,7 @@ python                     = "~3.8"
 
 [tool.poetry.dev-dependencies]
 autoflake                  = "~1.4"
-black                      = "~22.3.0"
+black                      = "~22.6.0"
 flake8                     = "~4.0.0"
 flake8-annotations         = "~2.9.0"
 flake8-black               = "~0.3.2"
