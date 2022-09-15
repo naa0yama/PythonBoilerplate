@@ -4,25 +4,24 @@
    ****************************************************************************/
   // python のファイルの設定
   "[python]": {
-    "editor.tabSize": 4,
-    "editor.formatOnPaste": false,
-    "editor.formatOnSaveMode": "file",
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 4
   },
   /*****************************************************************************
-   * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
-   * この設定を変更すると、再起動が必要になります。
+   * Ansible の設定
    ****************************************************************************/
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.mypy_cache/**": true,
-    "**/.pytest_cache/**": true,
-    "**/.venv/**": true,
-    "**/.tox/**": true
-  },
+  "ansible.ansible.path": "${workspaceFolder}/.venv/bin/ansible",
+  "ansible.python.activationScript": "${workspaceFolder}/.venv/bin/activate",
+  "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  /*****************************************************************************
+   * Python の設定
+   ****************************************************************************/
+  "autoDocstring.docstringFormat": "google",
   // 行にカラー ブロックではなく実際の文字を表示します。
   "editor.minimap.renderCharacters": false,
   // 表示領域をミニマップで常にハイライト
@@ -38,38 +37,34 @@
     120
   ],
   /*****************************************************************************
-   * Python の設定
+   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
    ****************************************************************************/
-  "autoDocstring.docstringFormat": "google",
-  "python.formatting.provider": "black",
+  "extensions.showRecommendationsOnlyOnDemand": false,
+  /*****************************************************************************
+   * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
+   * この設定を変更すると、再起動が必要になります。
+   ****************************************************************************/
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.tox/**": true,
+    "**/.venv/**": true
+  },
+  /*****************************************************************************
+   * Python の設定 linting
+   ****************************************************************************/
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.experiments.enabled": false,
   "python.formatting.blackArgs": [
     "--line-length=99"
   ],
   "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
-  "python.venvFolders": [
-    "envs",
-    ".direnv",
-    ".venv"
-  ],
-  "python.envFile": "${workspaceFolder}/.env",
-  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
-  "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  "python.experiments.enabled": false,
-  /*****************************************************************************
-   * Python の設定 linting
-   ****************************************************************************/
+  "python.formatting.provider": "black",
   "python.linting.enabled": true,
-  "python.linting.lintOnSave": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.pycodestyleEnabled": false,
   "python.linting.flake8Enabled": true,
-  /*****************************************************************************
-   * Python の設定 testing
-   ****************************************************************************/
-  "python.testing.unittestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
-  "python.testing.pytestEnabled": true,
+  "python.linting.lintOnSave": true,
   /*****************************************************************************
    * Python の設定 mypy
    ****************************************************************************/
@@ -78,9 +73,17 @@
   "python.linting.mypyCategorySeverity.note": "Information",
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
-  /****************************************************************************/
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
+  "python.testing.pytestEnabled": true,
   /*****************************************************************************
-   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
+   * Python の設定 testing
    ****************************************************************************/
-  "extensions.showRecommendationsOnlyOnDemand": false
+  "python.testing.unittestEnabled": false,
+  "python.venvFolders": [
+    "envs",
+    ".direnv",
+    ".venv"
+  ]
 }
