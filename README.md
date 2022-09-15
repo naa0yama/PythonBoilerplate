@@ -9,8 +9,6 @@ Python で開発する時用ボイラープレート
 - [pythonboilerplate](#pythonboilerplate)
   - [TOC](#toc)
   - [asdf のインストール](#asdf-のインストール)
-  - [poetry](#poetry)
-    - [インストール](#インストール)
     - [設定](#設定)
     - [使いそうなコマンド](#使いそうなコマンド)
       - [Poetryのアップデート](#poetryのアップデート)
@@ -70,34 +68,13 @@ asdf local python 3.8.13
 
 これでプロジェクト内の Python のバージョンは 3.8.13 になります
 
-
-## poetry
-
-### インストール
-
-Ref: [asdf\-community/asdf\-poetry: Poetry plugin for the asdf version manager](https://github.com/asdf-community/asdf-poetry)
-
-poetry のインストールを直で実施すると virtualenv を作成したときに global の python バージョンで作成
-されてしまうため asdf を利用して poetry をインストールする
+* poetry
 
 ```bash
 asdf plugin add poetry
-asdf install poetry latest
-asdf global poetry <インストールされたバージョン>
+asdf install poetry <version>
 
 ```
-
-
-* poetry の 補完設定
-
-Ref: [Introduction \| Documentation \| Poetry \- Python dependency management and packaging made easy](https://python-poetry.org/docs/#enable-tab-completion-for-bash-fish-or-zsh)
-
-```bash
-# Fish (Homebrew)
-poetry completions fish > (brew --prefix)/share/fish/vendor_completions.d/poetry.fish
-
-```
-
 
 ### 設定
 
