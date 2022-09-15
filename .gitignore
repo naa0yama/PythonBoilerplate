@@ -248,3 +248,10 @@ $RECYCLE.BIN/
 
 # AWS Lambda
 functions/
+
+# Ansible
+.vault_password
+
+# local debug
+tmp.**
+
