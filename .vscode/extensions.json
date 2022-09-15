@@ -8,5 +8,6 @@
     "esbenp.prettier-vscode", //    Prettier - Code formatter
     "ms-python.vscode-pylance", //  Pylance
     "ms-python.python", //          Python
+    "redhat.ansible", //            Ansible language support
   ]
 }
