@@ -11,8 +11,8 @@ license                    = "AGPL-3.0"
 python                     = "~3.8"
 
 [tool.poetry.dev-dependencies]
-autoflake                  = "~1.6"
-black                      = "~22.8.0"
+autoflake                  = "~1.7"
+black                      = "~22.10.0"
 flake8                     = "~5.0.0"
 flake8-annotations         = "~2.9.0"
 flake8-black               = "~0.3.2"
