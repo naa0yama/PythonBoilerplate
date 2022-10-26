@@ -54,7 +54,10 @@
   /*****************************************************************************
    * Python の設定 linting
    ****************************************************************************/
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/.venv/lib/**/site-packages"
+  ],
   "python.envFile": "${workspaceFolder}/.env",
   "python.experiments.enabled": false,
   "python.formatting.blackArgs": [
