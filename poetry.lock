@@ -352,7 +352,7 @@ pycodestyle = "*"
 
 [[package]]
 name = "flake8-return"
-version = "1.1.3"
+version = "1.2.0"
 description = "Flake8 plugin that checks return values"
 category = "dev"
 optional = false
@@ -942,7 +942,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "~3.8"
-content-hash = "a750655f540beb0600be68fc015f4322cf0c6c1251b11402960cfeef2eaa3910"
+content-hash = "9dcec4a46604e4b2711f2b902b7053e8d7e5aa24cdc97e506f258a0939180e23"
 
 [metadata.files]
 appnope = [
@@ -1215,8 +1215,8 @@ flake8-print = [
     {file = "flake8_print-5.0.0-py3-none-any.whl", hash = "sha256:84a1a6ea10d7056b804221ac5e62b1cee1aefc897ce16f2e5c42d3046068f5d8"},
 ]
 flake8-return = [
-    {file = "flake8-return-1.1.3.tar.gz", hash = "sha256:13a31edeb0c6157dd4f77166cdaa6141703d2b8b24def5558ae659852a003cb4"},
-    {file = "flake8_return-1.1.3-py3-none-any.whl", hash = "sha256:4a266191f7ed69aa26b835ec90c5a5522fa8f79f5cf6363a877ac499f8eb418b"},
+    {file = "flake8-return-1.2.0.tar.gz", hash = "sha256:68dfa56582cd704febd02ad86dcf5df67e38e0836d62f1ceae7930d76d3dd955"},
+    {file = "flake8_return-1.2.0-py3-none-any.whl", hash = "sha256:1f07af12954ed03ebe2c2aac2418f78b55374e9929d4956109664588f31582a1"},
 ]
 flake8-simplify = [
     {file = "flake8_simplify-0.19.3-py3-none-any.whl", hash = "sha256:1057320e9312d75849541fee822900d27bcad05b2405edc84713affee635629e"},
