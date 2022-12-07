@@ -4,7 +4,7 @@
 # %%
 """pythonboilerplate."""
 # %%
-from src.pythonboilerplate import __version__
+from pythonboilerplate import __version__
 
 
 def test_version() -> None:
