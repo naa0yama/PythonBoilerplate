@@ -255,3 +255,5 @@ functions/
 # local debug
 tmp.**
 
+# asdf
+.tool-versions
