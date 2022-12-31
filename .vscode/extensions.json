@@ -1,13 +1,14 @@
 {
   "recommendations": [
-    "wholroyd.jinja", //            Jinja
-    "njpwerner.autodocstring", //   autoDocstring - Python Docstring Generator
     "bungcip.better-toml", //       Better TOML
-    "oderwat.indent-rainbow", //    indent-rainbow
-    "ms-toolsai.jupyter", //        Jupyter
     "esbenp.prettier-vscode", //    Prettier - Code formatter
-    "ms-python.vscode-pylance", //  Pylance
     "ms-python.python", //          Python
+    "ms-python.vscode-pylance", //  Pylance
+    "ms-toolsai.jupyter", //        Jupyter
+    "njpwerner.autodocstring", //   autoDocstring - Python Docstring Generator
+    "oderwat.indent-rainbow", //    indent-rainbow
     "redhat.ansible", //            Ansible language support
+    "usernamehw.errorlens", //      Error Lens
+    "wholroyd.jinja", //            Jinja
   ]
 }

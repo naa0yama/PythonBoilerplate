@@ -86,6 +86,7 @@
    ****************************************************************************/
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/flake8",
   "python.linting.lintOnSave": true,
   "python.linting.mypyArgs": [],
   "python.linting.mypyCategorySeverity.error": "Error",
