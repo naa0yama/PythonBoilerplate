@@ -1,8 +1,7 @@
 {
   /*****************************************************************************
-   * VSCode の設定
-   ****************************************************************************/
-  // python のファイルの設定
+  * VSCode の設定
+  *****************************************************************************/
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
@@ -12,16 +11,6 @@
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4
   },
-  /*****************************************************************************
-   * Ansible の設定
-   ****************************************************************************/
-  "ansible.ansible.path": "${workspaceFolder}/.venv/bin/ansible",
-  "ansible.python.activationScript": "${workspaceFolder}/.venv/bin/activate",
-  "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
-  /*****************************************************************************
-   * Python の設定
-   ****************************************************************************/
-  "autoDocstring.docstringFormat": "google",
   // 行にカラー ブロックではなく実際の文字を表示します。
   "editor.minimap.renderCharacters": false,
   // 表示領域をミニマップで常にハイライト
@@ -37,13 +26,16 @@
     120
   ],
   /*****************************************************************************
-   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
-   ****************************************************************************/
-  "extensions.showRecommendationsOnlyOnDemand": false,
-  /*****************************************************************************
    * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
    * この設定を変更すると、再起動が必要になります。
    ****************************************************************************/
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "onFocusChange", //    タブやウィンドウがフォーカスを失うと自動保存する
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true, //     ファイルの保存時に末尾を改行
+  "files.trimFinalNewlines": true, //      ファイルの保存時に最終行以降をトリミング
+  "files.trimTrailingWhitespace": true, // ファイルの保存時に行末の空白をトリミング
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.mypy_cache/**": true,
@@ -52,25 +44,49 @@
     "**/.venv/**": true
   },
   /*****************************************************************************
-   * Python の設定 linting
+   * Ansible の設定
    ****************************************************************************/
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  "ansible.ansible.path": "${workspaceFolder}/.venv/bin/ansible",
+  "ansible.python.activationScript": "${workspaceFolder}/.venv/bin/activate",
+  "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  /*****************************************************************************
+   * Python の設定
+   ****************************************************************************/
+  "autoDocstring.docstringFormat": "google",
+  // Jupyter notebook の root directory を プロジェクトroot にする
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
   "python.analysis.extraPaths": [
-    "${workspaceFolder}/.venv/lib/**/site-packages"
+    "${workspaceFolder}/.venv/lib/**/site-packages/",
   ],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
   "python.envFile": "${workspaceFolder}/.env",
   "python.experiments.enabled": false,
+  "python.venvFolders": [
+    "envs",
+    ".direnv",
+    ".venv"
+  ],
+  /*****************************************************************************
+   * Python の設定 black
+   ****************************************************************************/
   "python.formatting.blackArgs": [
     "--line-length=99"
   ],
   "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
   "python.formatting.provider": "black",
+  /*****************************************************************************
+   * Python の設定 isort
+   ****************************************************************************/
+  "isort.path": [
+    "${workspaceFolder}/.venv/bin/isort"
+  ],
+  /*****************************************************************************
+   * Python の設定 linting
+   ****************************************************************************/
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.lintOnSave": true,
-  /*****************************************************************************
-   * Python の設定 mypy
-   ****************************************************************************/
   "python.linting.mypyArgs": [],
   "python.linting.mypyCategorySeverity.error": "Error",
   "python.linting.mypyCategorySeverity.note": "Information",
@@ -78,15 +94,14 @@
   "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
   "python.linting.pycodestyleEnabled": false,
   "python.linting.pylintEnabled": false,
-  "python.sortImports.path": "${workspaceFolder}/.venv/bin/isort",
-  "python.testing.pytestEnabled": true,
   /*****************************************************************************
    * Python の設定 testing
    ****************************************************************************/
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
-  "python.venvFolders": [
-    "envs",
-    ".direnv",
-    ".venv"
-  ]
+  /*****************************************************************************
+   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
+   ****************************************************************************/
+  "extensions.showRecommendationsOnlyOnDemand": false
 }
