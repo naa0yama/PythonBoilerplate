@@ -1,14 +1,27 @@
 {
   "recommendations": [
-    "bungcip.better-toml", //       Better TOML
-    "esbenp.prettier-vscode", //    Prettier - Code formatter
-    "ms-python.python", //          Python
-    "ms-python.vscode-pylance", //  Pylance
-    "ms-toolsai.jupyter", //        Jupyter
-    "njpwerner.autodocstring", //   autoDocstring - Python Docstring Generator
-    "oderwat.indent-rainbow", //    indent-rainbow
-    "redhat.ansible", //            Ansible language support
-    "usernamehw.errorlens", //      Error Lens
-    "wholroyd.jinja", //            Jinja
+    "bungcip.better-toml", //                Better TOML
+    "esbenp.prettier-vscode", //             Prettier - Code formatter
+    "ms-python.python", //                   Python
+    "ms-python.vscode-pylance", //           Pylance
+    "ms-toolsai.jupyter", //                 Jupyter
+    "njpwerner.autodocstring", //            autoDocstring - Python Docstring Generator
+    "oderwat.indent-rainbow", //             indent-rainbow
+    "usernamehw.errorlens", //               Error Lens
+    "wholroyd.jinja", //                     Jinja
+    "ms-vscode-remote.remote-containers", // Dev Containers
+    "ms-vscode-remote.remote-wsl", //        WSL
+    "ms-azuretools.vscode-docker", //        Docker
+    "eamodio.gitlens", //                    GitLens — Git supercharged
+    "ms-python.isort", //                    isort
+    "ruiquelhas.vscode-lowercase", //        lowercase
+    "yzhang.markdown-all-in-one", //         Markdown All in One
+    "ryu1kn.partial-diff", //                Partial Diff
+    "esbenp.prettier-vscode", //             Prettier - Code formatter
+    "ruiquelhas.vscode-uppercase", //        uppercase
+    "hadenlabs.ghq-project-manager", //      ghq project manager
+    "docsmsft.docs-markdown", //             learn-markdown
+    "docsmsft.docs-preview", //              learn-preview
+    "christian-kohler.path-intellisense" //  Path Intellisense
   ]
 }
