@@ -680,7 +680,17 @@ AWS の アクセスキー(Accesskey)やシークレットキー(SecretKey)を G
 
 [Visual Studio Code](https://code.visualstudio.com/) をサイトを参考にインストールします。
 
+* 拡張機能「[Remote Development」のインストール
+
 インストール後に [Remote Development \- Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) を開き、 「Install」 を押し「Visual Studio Code を開く」をクリック VSCode が開き拡張機能が表示されたら、「インストール」をクリックしてインストールしてください
+
+* フォントを「Cica」へ変更
+
+VSCode を開き、 Ctrl+「,」をショートカット入力し設定画面を開く  
+検索窓に `editor.fontFamily` を入力し `Cica` を入力する。
+
+![](img/tutorial-12.png)
+
 
 ---
 ## 使い方
