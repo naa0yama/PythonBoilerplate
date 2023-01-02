@@ -1,0 +1,48 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+  "name": "Python3",
+  "dockerFile": "Dockerfile",
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // "image": "mcr.microsoft.com/devcontainers/python:0-3.10-bullseye",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {}
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "pip3 install --user -r requirements.txt",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bungcip.better-toml", //                Better TOML
+        "esbenp.prettier-vscode", //             Prettier - Code formatter
+        "ms-python.python", //                   Python
+        "ms-python.vscode-pylance", //           Pylance
+        "ms-toolsai.jupyter", //                 Jupyter
+        "njpwerner.autodocstring", //            autoDocstring - Python Docstring Generator
+        "oderwat.indent-rainbow", //             indent-rainbow
+        "usernamehw.errorlens", //               Error Lens
+        "wholroyd.jinja", //                     Jinja
+        "ms-vscode-remote.remote-containers", // Dev Containers
+        "ms-vscode-remote.remote-wsl", //        WSL
+        "ms-azuretools.vscode-docker", //        Docker
+        "eamodio.gitlens", //                    GitLens — Git supercharged
+        "ms-python.isort", //                    isort
+        "ruiquelhas.vscode-lowercase", //        lowercase
+        "yzhang.markdown-all-in-one", //         Markdown All in One
+        "ryu1kn.partial-diff", //                Partial Diff
+        "esbenp.prettier-vscode", //             Prettier - Code formatter
+        "ruiquelhas.vscode-uppercase", //        uppercase
+        "hadenlabs.ghq-project-manager", //      ghq project manager
+        "docsmsft.docs-markdown", //             learn-markdown
+        "docsmsft.docs-preview", //              learn-preview
+        "christian-kohler.path-intellisense" //  Path Intellisense
+      ],
+      "settings": {}
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "vscode"
+}
