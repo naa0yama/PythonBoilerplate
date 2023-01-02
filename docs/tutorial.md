@@ -805,3 +805,23 @@ poetry install
 `3.10.8 ('.venv': poetry)` のようになっていれば正常に機能している。
 
 ![](img/tutorial-11.png)
+
+
+## トラブルシューティング
+
+### Coverage Gutters が表示されない, すごく時間がかかる
+
+`Coverage Gutters` はデフォルトの設定では `coverage.xml` の探索が膨大過ぎて時間がかかる。  
+また、プロジェクトレベルで設定を上書きできないため、プロジェクトを直接開くかワークスペースを作成して  
+ワークスペースに下記設定を追加すると軽快に動作する  
+`/home/naaoyama/gits/github.com/naa0yama/pythonboilerplate/coverage.xml` は `coverage.xml` までのパスを取得して置き換えること
+
+```json
+{
+  "settings": {
+    "coverage-gutters.manualCoverageFilePaths": [
+      "/home/naaoyama/gits/github.com/naa0yama/pythonboilerplate/coverage.xml",
+    ]
+  }
+}
+```
