@@ -16,29 +16,31 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "bungcip.better-toml", //                Better TOML
-        "esbenp.prettier-vscode", //             Prettier - Code formatter
-        "ms-python.python", //                   Python
-        "ms-python.vscode-pylance", //           Pylance
-        "ms-toolsai.jupyter", //                 Jupyter
-        "njpwerner.autodocstring", //            autoDocstring - Python Docstring Generator
-        "oderwat.indent-rainbow", //             indent-rainbow
-        "usernamehw.errorlens", //               Error Lens
-        "wholroyd.jinja", //                     Jinja
-        "ms-vscode-remote.remote-containers", // Dev Containers
-        "ms-vscode-remote.remote-wsl", //        WSL
-        "ms-azuretools.vscode-docker", //        Docker
-        "eamodio.gitlens", //                    GitLens — Git supercharged
-        "ms-python.isort", //                    isort
-        "ruiquelhas.vscode-lowercase", //        lowercase
-        "yzhang.markdown-all-in-one", //         Markdown All in One
-        "ryu1kn.partial-diff", //                Partial Diff
-        "esbenp.prettier-vscode", //             Prettier - Code formatter
-        "ruiquelhas.vscode-uppercase", //        uppercase
-        "hadenlabs.ghq-project-manager", //      ghq project manager
-        "docsmsft.docs-markdown", //             learn-markdown
-        "docsmsft.docs-preview", //              learn-preview
-        "christian-kohler.path-intellisense" //  Path Intellisense
+        "bungcip.better-toml", //                      Better TOML
+        "christian-kohler.path-intellisense", //       Path Intellisense
+        "docsmsft.docs-markdown", //                   learn-markdown
+        "docsmsft.docs-preview", //                    learn-preview
+        "eamodio.gitlens", //                          GitLens — Git supercharged
+        "esbenp.prettier-vscode", //                   Prettier - Code formatter
+        "esbenp.prettier-vscode", //                   Prettier - Code formatter
+        "hadenlabs.ghq-project-manager", //            ghq project manager
+        "littlefoxteam.vscode-python-test-adapter", // Python Test Explorer for Visual Studio Code
+        "ms-azuretools.vscode-docker", //              Docker
+        "ms-python.isort", //                          isort
+        "ms-python.python", //                         Python
+        "ms-python.vscode-pylance", //                 Pylance
+        "ms-toolsai.jupyter", //                       Jupyter
+        "ms-vscode-remote.remote-containers", //       Dev Containers
+        "ms-vscode-remote.remote-wsl", //              WSL
+        "njpwerner.autodocstring", //                  autoDocstring - Python Docstring Generator
+        "oderwat.indent-rainbow", //                   indent-rainbow
+        "ruiquelhas.vscode-lowercase", //              lowercase
+        "ruiquelhas.vscode-uppercase", //              uppercase
+        "ryanluker.vscode-coverage-gutters", //        Coverage Gutters
+        "ryu1kn.partial-diff", //                      Partial Diff
+        "usernamehw.errorlens", //                     Error Lens
+        "wholroyd.jinja", //                           Jinja
+        "yzhang.markdown-all-in-one" //                Markdown All in One
       ],
       "settings": {}
     }
