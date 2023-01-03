@@ -747,6 +747,14 @@ code .
 
 上記のボタン操作後、再読み込みが完了すればすぐに開発が開始できる。
 
+再度、ターミナルを開き `pre-commit` を導入しておく、 `git commit` 時にコード解析し問題がある場合は commit をキャンセルする
+
+```bash
+pre-commit install
+
+```
+
+
 ---
 
 ### 2. 手元の環境で開発する方法
@@ -798,6 +806,14 @@ poetry install
 ```
 
 インストールが完了したら、 Ctrl+Alt+P のショートカットをして `Python: Clear Cache and Reload Window` を選択して再読み込みこれで `.venv` が読み込まれて使えるようになる。
+
+
+再度、ターミナルを開き `pre-commit` を導入しておく、 `git commit` 時にコード解析し問題がある場合は commit をキャンセルする
+
+```bash
+pre-commit install
+
+```
 
 * 確認
 
