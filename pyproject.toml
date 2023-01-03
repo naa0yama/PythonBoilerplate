@@ -7,6 +7,14 @@ authors                    = [
 ]
 license                    = "AGPL-3.0"
 
+# sphinx 用
+[project]
+name                       = "pythonboilerplate"
+version                    = "0.1.0"
+description                = "Python を開発する時用ボイラープレート"
+[[project.authors]]
+name                       = "Naoki Aoyama"
+
 [tool.poetry.dependencies]
 python                     = "~3.10"
 
@@ -35,6 +43,11 @@ pip                        = "^22.0.0"
 pre-commit                 = "~2.21.0"
 pytest                     = "~7.2.0"
 pytest-cov                 = "~4.0.0"
+sphinx                     = "~5.3.0"
+sphinx-autobuild           = "~2021.3.14"
+sphinx-pyproject           = "~0.1.0"
+sphinx-rtd-theme           = "~1.1.1"
+taskipy                    = "~1.10.3"
 tox                        = "~4.1.0"
 
 [tool.black]
@@ -50,23 +63,43 @@ exclude                    = '''
 )
 '''
 
-[tool.coverage]
-[tool.coverage.run]
-branch                     = true
-command_line               = "-m pytest"
-
 [tool.isort]
-include_trailing_comma     = true
-line_length                = 99
 force_single_line          = true
 force_sort_within_sections = true
+include_trailing_comma     = true
+line_length                = 99
+profile                    = "black"
 skip                       = [
+    ".history",
     ".mypy_cache",
     ".pytest_cache",
     ".tox",
     ".venv",
-    ".history",
 ]
+
+[tool.mypy]
+# Ref: https://mypy.readthedocs.io/en/stable/config_file.html?highlight=pyproject
+
+## Import discovery
+ignore_missing_imports     = true
+warn_unused_configs        = true
+
+## Disallow dynamic typing
+disallow_any_unimported    = true
+disallow_any_generics      = true
+disallow_untyped_defs      = true
+
+## disallow_any_unimported
+disallow_untyped_calls     = true
+disallow_incomplete_defs   = true
+check_untyped_defs         = true
+strict_optional            = true
+
+## strict_optional
+warn_unused_ignores        = true
+warn_no_return             = true
+warn_return_any            = true
+warn_unreachable           = true
 
 [tool.pytest]
 [tool.pytest.ini_options]
@@ -81,8 +114,33 @@ addopts                    = [
     "--cov-report=term",
     "--cov-report=term-missing",
     "--cov-report=term-missing",
-    "--cov-report=xml"
+    "--cov-report=xml",
+    "--cov-report=html"
 ]
+
+[tool.sphinx-pyproject]
+autosummary_generate       = true
+project                    = "pythonboilerplate"
+copyright                  = "2022, naa0yama"
+language                   = "en"
+package_root               = "src/pythonboilerplate"
+html_theme                 = "sphinx_rtd_theme"
+todo_include_todos         = true
+templates_path             = ["_templates"]
+html_static_path           = ["_static"]
+extensions                 = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.todo",
+    'sphinx.ext.autosummary',
+    "sphinx.ext.napoleon",
+]
+
+[tool.taskipy.tasks]
+test                       = "pytest"
+testview                   = "python3 -m http.server 8000 --directory htmlcov/"
+docs                       = "sphinx-apidoc -F -o docs/source src && sphinx-build docs/source docs/build"
+docslive                   = "sphinx-autobuild docs/source/ docs/build/"
 
 [build-system]
 requires                   = [
