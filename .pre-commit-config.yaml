@@ -29,13 +29,6 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
     hooks:
-      - id: check-json
-        exclude: |
-          (?x)^(
-              .devcontainer/devcontainer.json|
-              .vscode/extensions.json|
-              .vscode/settings.json
-          )$
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: debug-statements
@@ -43,8 +36,14 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: fix-byte-order-marker
-      - id: check-toml
       - id: check-json
+        exclude: |
+          (?x)^(
+              .devcontainer/devcontainer.json|
+              .vscode/extensions.json|
+              .vscode/settings.json
+          )$
+      - id: check-toml
       - id: check-yaml
       - id: detect-aws-credentials
       - id: detect-private-key
