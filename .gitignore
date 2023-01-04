@@ -420,3 +420,7 @@ tmp.**
 # sphinx
 docs/source/*
 !docs/source/conf.py
+
+# pytest-azurepipelines
+**/test-output.xml
+
