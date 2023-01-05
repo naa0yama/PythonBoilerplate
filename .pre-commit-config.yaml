@@ -1,30 +1,46 @@
+---
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
+files: "^ke2tools/"
+minimum_pre_commit_version: 2.21.0
+
 repos:
   - repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
       - id: black
+        args: ["--config", "ke2tools/pyproject.toml"]
+        verbose: true
 
   - repo: https://github.com/asottile/blacken-docs
     rev: v1.12.1
     hooks:
       - id: blacken-docs
+        entry: /bin/sh -c "cd ke2tools/ && blacken-docs"
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.11.0
     hooks:
       - id: isort
+        args: ["--settings-file", "ke2tools/pyproject.toml"]
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.991
     hooks:
       - id: mypy
+        args: ["--config-file", "ke2tools/pyproject.toml"]
 
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
     hooks:
       - id: flake8
+        args: ["--config", "ke2tools/setup.cfg"]
+
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.28.0
+    hooks:
+      - id: yamllint
+        args: ["-c=ke2tools/.yamllint.yml"]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
@@ -39,9 +55,9 @@ repos:
       - id: check-json
         exclude: |
           (?x)^(
-              .devcontainer/devcontainer.json|
-              .vscode/extensions.json|
-              .vscode/settings.json
+              ke2tools/.devcontainer/devcontainer.json|
+              ke2tools/.vscode/extensions.json|
+              ke2tools/.vscode/settings.json
           )$
       - id: check-toml
       - id: check-yaml
