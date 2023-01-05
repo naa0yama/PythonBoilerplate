@@ -11,6 +11,18 @@
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4
   },
+  "[markdown]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 4
+  },
+  "[toml]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 4
+  },
+  "[ini]": {
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 4
+  },
   // 行にカラー ブロックではなく実際の文字を表示します。
   "editor.minimap.renderCharacters": false,
   // 表示領域をミニマップで常にハイライト
@@ -29,6 +41,9 @@
    * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
    * この設定を変更すると、再起動が必要になります。
    ****************************************************************************/
+  "files.associations": {
+    "setup.cfg": "ini"
+  },
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange", //    タブやウィンドウがフォーカスを失うと自動保存する
   "files.encoding": "utf8",
@@ -43,6 +58,7 @@
     "**/.tox/**": true,
     "**/.venv/**": true
   },
+  "markdown.extension.list.indentationSize": "inherit",
   /*****************************************************************************
    * Ansible の設定
    ****************************************************************************/
