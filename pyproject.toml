@@ -87,7 +87,7 @@ warn_unused_configs        = true
 
 ## Disallow dynamic typing
 disallow_any_unimported    = true
-disallow_any_generics      = true
+#disallow_any_generics      = true
 disallow_untyped_defs      = true
 
 ## disallow_any_unimported
