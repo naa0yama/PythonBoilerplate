@@ -1,0 +1,13 @@
+# Editor configuration, see https://editorconfig.org/
+root = true # リポジトリトップに配置する場合は、より上位のディレクトリの影響を防ぐために必要
+
+[*]                                 # 全ファイル共通の設定（上書き可）
+charset = utf-8                     # 文字コードを UTF-8 とする
+end_of_line = lf                    # 改行コードを LF とする
+indent_size = 2                     # インデント幅を 2 とする
+indent_style = space                # インデントをスペースで行う
+insert_final_newline = true         # ファイル末尾に改行を入れる
+trim_trailing_whitespace = true     # 行末の空白を削除する
+
+[*.{py,md,toml,cfg,ini}]            # .py ファイルのみに適用する設定
+indent_size = 4                     # インデント幅を 4 とする
