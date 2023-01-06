@@ -7,6 +7,9 @@ authors                    = [
 ]
 license                    = "AGPL-3.0"
 
+[tool.poetry.scripts]
+sample-cli                 = "pythonboilerplate.cli:main"
+
 # sphinx 用
 [project]
 name                       = "pythonboilerplate"
@@ -41,6 +44,7 @@ isort                      = "~5.11.0"
 mypy                       = "~0.991"
 pip                        = "^22.0.0"
 pre-commit                 = "~2.21.0"
+pyproject-flake8           = "~6.0.0"
 pytest                     = "~7.2.0"
 pytest-azurepipelines      = "~1.0.4"
 pytest-cov                 = "~4.0.0"
@@ -64,9 +68,39 @@ exclude                    = '''
 )
 '''
 
+[tool.flake8]
+max-line-length            = 99
+# E203: ":"の前の空白を入れないルール
+# E501: 演算子の前に改行しないようにするルール
+# W503: 二項演算子の後に改行が存在する
+# ANN101: メソッド内の self の型アノテーションがありません
+ignore                     = [
+    "E203",
+    "E501",
+    "W503",
+    "ANN101",
+]
+docstring-convention       = "google"
+exclude                    = [
+    ".git",
+    "__pychache__",
+    "build",
+    "dist",
+    ".tox",
+    ".venv",
+    ".aws-sam",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".history",
+]
+
 [tool.isort]
 force_single_line          = true
 force_sort_within_sections = true
+import_heading_firstparty  = "First Party Library"
+import_heading_localfolder = "Local Library"
+import_heading_stdlib      = "Standard Library"
+import_heading_thirdparty  = "Third Party Library"
 include_trailing_comma     = true
 line_length                = 99
 profile                    = "black"

@@ -19,10 +19,6 @@
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4
   },
-  "[ini]": {
-    "editor.formatOnSaveMode": "file",
-    "editor.tabSize": 4
-  },
   // 行にカラー ブロックではなく実際の文字を表示します。
   "editor.minimap.renderCharacters": false,
   // 表示領域をミニマップで常にハイライト
@@ -41,9 +37,6 @@
    * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
    * この設定を変更すると、再起動が必要になります。
    ****************************************************************************/
-  "files.associations": {
-    "setup.cfg": "ini"
-  },
   "files.autoGuessEncoding": true,
   "files.autoSave": "onFocusChange", //    タブやウィンドウがフォーカスを失うと自動保存する
   "files.encoding": "utf8",
@@ -102,7 +95,7 @@
    ****************************************************************************/
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/flake8",
+  "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/pflake8",
   "python.linting.lintOnSave": true,
   "python.linting.mypyArgs": [],
   "python.linting.mypyCategorySeverity.error": "Error",

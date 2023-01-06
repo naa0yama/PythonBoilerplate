@@ -3,10 +3,18 @@
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
 """pythonboilerplate."""
-# %%
-from pythonboilerplate import __version__
+# Standard Library
+import importlib.metadata
+
+# First Party Library
+from pythonboilerplate.cli import versions
+
+__metadata = importlib.metadata.metadata("pythonboilerplate")
 
 
-def test_version() -> None:
+def test_versions() -> None:
     """Test version."""
-    assert __version__ == "0.1.0"
+    assert versions() == "{} {}".format(
+        __metadata["name"],
+        __metadata["version"],
+    )
