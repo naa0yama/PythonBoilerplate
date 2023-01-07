@@ -1,98 +1,158 @@
 {
+  /* ===========================================================================
+   * VSCode の設定
+   * ADCBE FGHIJ LKMNO PQRST UVWYX Z
+  ** ==========================================================================/
   /*****************************************************************************
-  * VSCode の設定
-  *****************************************************************************/
+   * VSCode > Editor */
+  "editor.detectIndentation": false, // ファイルの種類による、 TabSize と InsertSpaces の決定無効,種類ごとに個別に設定する
+  "editor.insertSpaces": true,
+  /*****************************************************************************
+  * VSCode > rulers, minimap, view */
+  "editor.guides.indentation": true, //        エディターでインデント ガイドを表示するかどうかを制御します。
+  "editor.renderControlCharacters": true, //   制御文字を表示する
+  "editor.renderLineHighlight": "all", //      選択行を行番号含めすべてハイライト
+  "editor.renderWhitespace": "all", //         半角スペースを常に表示
+  "editor.rulers": [ //                        指定文字で縦ルーラーを表示する
+    80,
+    100,
+    120
+  ],
+  // 単語に関連したナビゲーションまたは操作を実行するときに、単語の区切り文字として仕様される文字。
+  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?、。",
+  /*****************************************************************************
+   * VSCode > 自動フォーマット */
+  "editor.formatOnPaste": true, // ペースト時に自動でフォーマット
+  "editor.formatOnSave": true, // ファイル保存時に自動でフォーマット
+  "editor.formatOnType": true,
+  "editor.formatOnSaveMode": "file",
+  /*****************************************************************************
+   * VSCode >  files */
+  "files.associations": {
+    ".yamllint": "yaml",
+    "*.ipynb": "jupyter-notebook",
+    "*.json": "jsonc",
+    "*.json5": "json",
+    "*.py": "python",
+    "Dockerfile.*": "dockerfile"
+  },
+  "files.autoGuessEncoding": true, //                                           タブやウィンドウがフォーカスを失うと自動保存する
+  "files.autoSave": "afterDelay",
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true, //     ファイルの保存時に末尾を改行
+  "files.maxMemoryForLargeFilesMB": 512,
+  "files.trimFinalNewlines": true, //      ファイルの保存時に最終行以降をトリミング
+  "files.trimTrailingWhitespace": true, // ファイルの保存時に行末の空白をトリミング
+  "files.watcherExclude": { /*「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
+                            ** この設定を変更すると、再起動が必要になります。始動時に Code が消費する CPU 時間が多い場合は、
+                            ** 大規模なフォルダーを除外して初期ロードを減らせます。」*/
+    "**/.git/objects/**": true,
+    "**/.history/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.tox/**": true,
+    "**/.venv/**": true,
+    "**/node_modules/**": true,
+    "**/vendor/**": true
+  },
+  "search.exclude": {
+    "**/.tmp": true, /* フルテキスト検索と Quick Open でファイルとフォルダーを除外するための glob パターン を構成します。
+                      ** Files: Exclude 設定からすべての glob パターンを継承します。*/
+    "**/bower_components": true,
+    "**/bundle": true,
+    "**/composer": true,
+    "**/node_modules": true,
+    "**/tmp": true
+  },
+  /*****************************************************************************
+   * Language Settings */
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.tabSize": 4,
+    "files.trimTrailingWhitespace": false // Markdown のファイルは行末の空白をトリミングしない
+  },
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
     "editor.defaultFormatter": "ms-python.python",
-    "editor.formatOnPaste": false,
-    "editor.formatOnSaveMode": "file",
-    "editor.tabSize": 4
-  },
-  "[markdown]": {
-    "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4
   },
   "[toml]": {
-    "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4
   },
-  // 行にカラー ブロックではなく実際の文字を表示します。
-  "editor.minimap.renderCharacters": false,
-  // 表示領域をミニマップで常にハイライト
-  "editor.minimap.showSlider": "always",
-  // 選択行を行番号含めすべてハイライト
-  "editor.renderLineHighlight": "all",
-  // 半角スペースを常に表示
-  "editor.renderWhitespace": "all",
-  // 指定文字で縦ルーラーを表示する
-  "editor.rulers": [
-    80,
-    100,
-    120
-  ],
-  /*****************************************************************************
-   * 「ファイル モニタリングから除外するファイル パスの glob パターンを構成します。
-   * この設定を変更すると、再起動が必要になります。
-   ****************************************************************************/
-  "files.autoGuessEncoding": true,
-  "files.autoSave": "onFocusChange", //    タブやウィンドウがフォーカスを失うと自動保存する
-  "files.encoding": "utf8",
-  "files.eol": "\n",
-  "files.insertFinalNewline": true, //     ファイルの保存時に末尾を改行
-  "files.trimFinalNewlines": true, //      ファイルの保存時に最終行以降をトリミング
-  "files.trimTrailingWhitespace": true, // ファイルの保存時に行末の空白をトリミング
-  "files.watcherExclude": {
-    "**/.git/objects/**": true,
-    "**/.mypy_cache/**": true,
-    "**/.pytest_cache/**": true,
-    "**/.tox/**": true,
-    "**/.venv/**": true
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
-  "markdown.extension.list.indentationSize": "inherit",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2
+  },
+  "[dockerfile]": {
+    "editor.tabSize": 4
+  },
   /*****************************************************************************
-   * Ansible の設定
-   ****************************************************************************/
+   * VSCode > Diff */
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": true, // 差分を横に並べて表示ではなく行内に表示する
+  "scm.diffDecorationsGutterPattern": {
+    "added": true
+  },
+  /*****************************************************************************
+   * VSCode > Git */
+  "git.autofetch": true, //          自動フェッチが有効かどうか
+  "git.autoStash": true,
+  "git.enableSmartCommit": false, // ステージされた変更がない場合はすべての変更をコミットします。
+  "git.postCommitCommand": "push",
+  /*****************************************************************************
+   * VSCode > Extensions */
+  "extensions.autoUpdate": true,
+  "extensions.ignoreRecommendations": false,
+  /*****************************************************************************
+   * VSCode > Other */
+  "editor.hover.delay": 1000,
+  "explorer.incrementalNaming": "smart",
+  "settingsSync.ignoredSettings": [],
+  // VSCode >  Problems */
+  "problems.showCurrentInStatus": true, // 有効にすると、現在発生している問題がステータス バーに表示されます。
+  // VSCode >  Window */
+  "window.openFilesInNewWindow": "on",
+  /*
+   *
+   *
+   * ===========================================================================
+   * Extension
+   * =========================================================================*/
+  /*****************************************************************************
+   * Extension: Ansible */
   "ansible.ansible.path": "${workspaceFolder}/.venv/bin/ansible",
   "ansible.python.activationScript": "${workspaceFolder}/.venv/bin/activate",
   "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  /****************************************************************************/
   /*****************************************************************************
-   * Python の設定
-   ****************************************************************************/
-  "autoDocstring.docstringFormat": "google",
-  // Jupyter notebook の root directory を プロジェクトroot にする
-  "jupyter.notebookFileRoot": "${workspaceFolder}",
-  "python.analysis.extraPaths": [
-    "${workspaceFolder}/.venv/lib/**/site-packages/",
-  ],
-  "python.analysis.typeCheckingMode": "basic",
+   * Extension: Python */
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
+  "python.disableInstallationCheck": true,
   "python.envFile": "${workspaceFolder}/.env",
   "python.experiments.enabled": false,
+  "python.terminal.activateEnvInCurrentTerminal": true,
   "python.venvFolders": [
     "envs",
     ".direnv",
     ".venv"
   ],
-  /*****************************************************************************
-   * Python の設定 black
-   ****************************************************************************/
-  "python.formatting.blackArgs": [
-    "--line-length=99"
-  ],
+  /* ---------------------------------------------------------------------------
+    * Formatting */
+  "python.formatting.blackArgs": [],
   "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
   "python.formatting.provider": "black",
-  /*****************************************************************************
-   * Python の設定 isort
-   ****************************************************************************/
-  "isort.path": [
-    "${workspaceFolder}/.venv/bin/isort"
-  ],
-  /*****************************************************************************
-   * Python の設定 linting
-   ****************************************************************************/
+  /* ---------------------------------------------------------------------------
+    * Python の設定 linting */
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/pflake8",
@@ -104,12 +164,87 @@
   "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
   "python.linting.pycodestyleEnabled": false,
   "python.linting.pylintEnabled": false,
-  /*****************************************************************************
-   * Python の設定 testing
-   ****************************************************************************/
+  /* ---------------------------------------------------------------------------
+    * Python の設定 testing */
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
-  "python.testing.pytestEnabled": true,
+  "python.testing.cwd": "${workspaceFolder}",
+  "python.testing.pytestEnabled": false,
+  "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest",
   "python.testing.unittestEnabled": false,
+  "testing.alwaysRevealTestOnStateChange": true,
+  "testing.automaticallyOpenPeekViewDuringAutoRun": true,
+  // Extension: autoDocstring - Python Docstring Generator
+  "autoDocstring.docstringFormat": "google",
+  // Extension: Pylance
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/.venv/lib/**/site-packages/"
+  ],
+  "python.analysis.typeCheckingMode": "basic",
+  // Extension: Jupyter
+  "jupyter.askForKernelRestart": false,
+  "jupyter.enableAutoMoveToNextCell": false,
+  "jupyter.notebookFileRoot": "${workspaceFolder}", // Jupyter notebook の root directory を プロジェクトroot にする
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.outline.showCodeCells": true,
+  "notebook.output.textLineLimit": 3000,
+  // Extension: isort
+  "isort.path": [
+    "${workspaceFolder}/.venv/bin/isort"
+  ],
+  // Extension: Python Test Explorer for Visual Studio Code
+  "pythonTestExplorer.testFramework": "pytest",
+  "testExplorer.addToEditorContextMenu": true,
+  "testExplorer.hideWhen": "noTests",
+  "testExplorer.mergeSuites": true,
+  "testExplorer.onReload": "retire",
+  "testExplorer.onStart": "retire",
+  "testExplorer.showOnRun": true,
+  "testExplorer.sort": null,
+  "testExplorer.useNativeTesting": false,
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: Partial Diff */
+  "partialDiff.commandsOnContextMenu": {
+    "diffSelectionWithClipboard": true,
+    "diffVisibleEditors": true,
+    "markSection1": true,
+    "markSection2AndTakeDiff": true,
+    "togglePreComparisonTextNormalizationRules": true
+  },
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: Prettier - Code formatter */
+  "prettier.enable": true,
+  "prettier.singleQuote": false,
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: Markdown PDF */
+  "markdown-pdf.styles": [
+    "markdown-pdf.css"
+  ],
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: markdownlint */
+  "markdownlint.config": {
+    "MD025": {
+      "front_matter_title": ""
+    },
+    "MD028": false
+  },
+  "markdownlint.customRules": [
+    "{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
+  ],
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: Ansible */
+  "redhat.telemetry.enabled": false,
+  /****************************************************************************/
+  /*****************************************************************************
+   * Extension: Coverage Gutters */
   "coverage-gutters.coverageFileNames": [
     "lcov.info",
     "cov.xml",
@@ -117,14 +252,16 @@
     "jacoco.xml",
     "coverage.cobertura.xml"
   ],
+  "coverage-gutters.ignoredPathGlobs": "**/{.mypy_cache,.pytest_cache,.tox,.venv,node_modules,,vendor,venv}/**",
+  "coverage-gutters.manualCoverageFilePaths": [],
+  "coverage-gutters.showGutterCoverage": true,
   "coverage-gutters.showLineCoverage": true,
   "coverage-gutters.showRulerCoverage": true,
-  "coverage-gutters.ignoredPathGlobs": "**/{.mypy_cache,.pytest_cache,.tox,.venv,node_modules,,vendor,venv}/**",
-  "coverage-gutters.manualCoverageFilePaths": [
-    "coverage.xml",
-  ],
+  /****************************************************************************/
   /*****************************************************************************
-   * プロジェクト 参加者には 拡張機能をおすすめする false でおすすめ
-   ****************************************************************************/
-  "extensions.ignoreRecommendations": false
+   * Extension: Markdown All in One */
+  "markdown.extension.list.indentationSize": "inherit",
+  /****************************************************************************/
+  /*****************************************************************************
+   * Unknown: */
 }

@@ -2,11 +2,12 @@
   "recommendations": [
     "bungcip.better-toml", //                      Better TOML
     "christian-kohler.path-intellisense", //       Path Intellisense
+    "DavidAnson.vscode-markdownlint", //           markdownlint
     "docsmsft.docs-markdown", //                   learn-markdown
     "docsmsft.docs-preview", //                    learn-preview
     "eamodio.gitlens", //                          GitLens — Git supercharged
     "esbenp.prettier-vscode", //                   Prettier - Code formatter
-    "esbenp.prettier-vscode", //                   Prettier - Code formatter
+    "Gruntfuggly.todo-tree", //                    Todo Tree
     "hadenlabs.ghq-project-manager", //            ghq project manager
     "littlefoxteam.vscode-python-test-adapter", // Python Test Explorer for Visual Studio Code
     "ms-azuretools.vscode-docker", //              Docker
@@ -24,6 +25,6 @@
     "ryu1kn.partial-diff", //                      Partial Diff
     "usernamehw.errorlens", //                     Error Lens
     "wholroyd.jinja", //                           Jinja
-    "yzhang.markdown-all-in-one" //                Markdown All in One
+    "yzhang.markdown-all-in-one", //               Markdown All in One
   ]
 }
