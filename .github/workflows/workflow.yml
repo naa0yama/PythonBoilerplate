@@ -32,7 +32,7 @@ jobs:
         id: cache-tox
         uses: actions/cache@v3.2.2
         with:
-          path: .tox
+          path: .tox,~/.cache/pre-commit
           # setup.cfg and pyproject.toml have versioning info that would
           # impact the tox environment.
           key: tox-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'setup.cfg') }}
