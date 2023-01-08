@@ -77,6 +77,7 @@
       "source.organizeImports": true
     },
     "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnPaste": false,
     "editor.tabSize": 4
   },
   "[toml]": {
