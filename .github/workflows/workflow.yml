@@ -35,9 +35,9 @@ jobs:
           path: |
             ~/.cache/pre-commit
             .tox
-          # setup.cfg and pyproject.toml have versioning info that would
+          # pyproject.toml and poetry.lock have versioning info that would
           # impact the tox environment.
-          key: tox-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'setup.cfg') }}
+          key: tox-${{ matrix.python-version }}-${{ hashFiles('pyproject.toml', 'poetry.lock') }}
 
       - name: Run tox
         run: tox
