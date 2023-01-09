@@ -2,6 +2,8 @@
   "recommendations": [
     "bungcip.better-toml", //                      Better TOML
     "christian-kohler.path-intellisense", //       Path Intellisense
+    "DavidAnson.vscode-markdownlint", //           markdownlint
+    "docsmsft.docs-images", //                     docs-images
     "docsmsft.docs-markdown", //                   learn-markdown
     "docsmsft.docs-preview", //                    learn-preview
     "eamodio.gitlens", //                          GitLens — Git supercharged

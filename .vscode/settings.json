@@ -69,7 +69,6 @@
    * Language Settings */
   "[markdown]": {
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-    "editor.tabSize": 4,
     "files.trimTrailingWhitespace": false // Markdown のファイルは行末の空白をトリミングしない
   },
   "[python]": {
