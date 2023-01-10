@@ -26,6 +26,6 @@
     "ryu1kn.partial-diff", //                      Partial Diff
     "usernamehw.errorlens", //                     Error Lens
     "wholroyd.jinja", //                           Jinja
-    "yzhang.markdown-all-in-one", //               Markdown All in One
+    "yzhang.markdown-all-in-one" //                Markdown All in One
   ]
 }
