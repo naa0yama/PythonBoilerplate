@@ -1550,6 +1550,22 @@ docs = ["furo (>=2022.9.29)", "sphinx (>=5.3)", "sphinx-autodoc-typehints (>=1.1
 testing = ["covdefaults (>=2.2.2)", "importlib-metadata (>=5.1)", "pytest (>=7.2)", "pytest-cov (>=4)", "pytest-mock (>=3.10)", "virtualenv (>=20.17)", "wheel (>=0.38.4)"]
 
 [[package]]
+name = "pyproject-flake8"
+version = "6.0.0.post1"
+description = "pyproject-flake8 (`pflake8`), a monkey patching wrapper to connect flake8 with pyproject.toml configuration"
+category = "dev"
+optional = false
+python-versions = ">=3.8.1"
+files = [
+    {file = "pyproject-flake8-6.0.0.post1.tar.gz", hash = "sha256:d43421caca0ef8a672874405fe63c722b0333e3c22c41648c6df60f21bab2b6b"},
+    {file = "pyproject_flake8-6.0.0.post1-py3-none-any.whl", hash = "sha256:bdc7ca9b967b9724983903489b8943b72c668178fb69f03e8774ec74f6a13782"},
+]
+
+[package.dependencies]
+flake8 = "6.0.0"
+tomli = {version = "*", markers = "python_version < \"3.11\""}
+
+[[package]]
 name = "pytest"
 version = "7.2.0"
 description = "pytest: simple powerful testing with Python"
@@ -2149,14 +2165,14 @@ files = [
 
 [[package]]
 name = "tox"
-version = "4.2.6"
+version = "4.2.4"
 description = "tox is a generic virtualenv management and test command line tool"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "tox-4.2.6-py3-none-any.whl", hash = "sha256:fb79b3e4b788491949576a9c80c2d56419eac994567c3591e24bb2788b5901d0"},
-    {file = "tox-4.2.6.tar.gz", hash = "sha256:ecf224a4f3a318adcdd71aa8fe15ffd31f14afd6a9845a43ffd63950a7325538"},
+    {file = "tox-4.2.4-py3-none-any.whl", hash = "sha256:f51407aaff87f6f5361ae2733cffd371940ed001792b60ea50d955c266b3b22b"},
+    {file = "tox-4.2.4.tar.gz", hash = "sha256:05b1cbf94e02eff40818860b352b4a452d7369558f3bb05809043c6b4c36e5f4"},
 ]
 
 [package.dependencies]
@@ -2256,4 +2272,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "2cf2e7bc19eb3e03edb0224ac5b05b054e1a63fa6a1447662deb27ca6d42addf"
+content-hash = "484388d6d9ba8967747a4f39ac440546629c646f800167e16476fad48f23f59c"
