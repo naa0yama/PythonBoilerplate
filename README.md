@@ -7,4 +7,4 @@ Python で開発する時用ボイラープレート
 
 ## チュートリアル
 
-2023-01-02 [チュートリアル](/docs/tutorial) を書きました
+[VSCode で極力手を抜いて開発するハンドブック](https://zenn.dev/naa0yama/books/python-boilerplate) を書きました
