@@ -109,6 +109,10 @@
   "git.autoStash": true,
   "git.enableSmartCommit": false, // ステージされた変更がない場合はすべての変更をコミットします。
   "git.postCommitCommand": "push",
+  "git.commandsToLog": [
+    "commit",
+    "push"
+  ],
   /*****************************************************************************
    * VSCode > Extensions */
   "extensions.autoUpdate": true,
