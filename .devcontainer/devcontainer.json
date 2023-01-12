@@ -30,6 +30,7 @@
         "ms-azuretools.vscode-docker", //              Docker
         "ms-python.isort", //                          isort
         "ms-python.python", //                         Python
+        "ms-python.vscode-pylance", //                 Pylance
         "ms-toolsai.jupyter", //                       Jupyter
         "ms-vscode-remote.remote-containers", //       Dev Containers
         "ms-vscode-remote.remote-wsl", //              WSL
