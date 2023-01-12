@@ -95,3 +95,14 @@ repos:
           - flake8-variables-names
           - pyproject-flake8
         args: ["--config", "pyproject.toml"]
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        stages:
+          - "push"
+        language: system
+        pass_filenames: false
+        always_run: true
