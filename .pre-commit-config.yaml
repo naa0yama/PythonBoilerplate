@@ -108,6 +108,7 @@ repos:
         additional_dependencies:
           - pytest-azurepipelines
           - pytest-cov
+          - setuptools-git-versioning
         stages:
           - "push"
         language: python
