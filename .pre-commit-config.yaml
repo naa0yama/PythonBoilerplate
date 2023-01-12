@@ -47,14 +47,18 @@ repos:
       - id: isort
         args: ["--settings-file", "pyproject.toml"]
 
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.991
+  - repo: local
     hooks:
       - id: mypy
-        additional_dependencies:
-          - pytest
-          - types-requests
+        name: mypy
+        description: "run mypy in the .venv of your local project"
+        entry: mypy
+        language: system
+        types_or: [python, pyi]
         args: ["--config-file", "pyproject.toml"]
+        require_serial: true
+        additional_dependencies: []
+        minimum_pre_commit_version: "2.9.2"
 
   - repo: https://github.com/psf/black
     rev: 22.12.0
