@@ -182,10 +182,15 @@
   // Extension: autoDocstring - Python Docstring Generator
   "autoDocstring.docstringFormat": "google",
   // Extension: Pylance
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoImportUserSymbols": true,
+  "python.analysis.completeFunctionParens": true,
   "python.analysis.extraPaths": [
-    "${workspaceFolder}/.venv/lib/**/site-packages/"
+    "${workspaceFolder}/.venv/lib/**/site-packages/",
+    "${workspaceFolder}/src/pythonboilerplate/",
   ],
-  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.importFormat": "absolute",
+  "python.analysis.typeCheckingMode": "off",
   // Extension: Jupyter
   "jupyter.askForKernelRestart": false,
   "jupyter.enableAutoMoveToNextCell": false,
