@@ -124,17 +124,20 @@ disallow_any_unimported    = true
 #disallow_any_generics      = true
 disallow_untyped_defs      = true
 
-## disallow_any_unimported
+## Untyped definitions and calls
 disallow_untyped_calls     = true
 disallow_incomplete_defs   = true
 check_untyped_defs         = true
 strict_optional            = true
 
-## strict_optional
+## Configuring warnings
 warn_unused_ignores        = true
 warn_no_return             = true
 warn_return_any            = true
 warn_unreachable           = true
+
+## Miscellaneous
+scripts_are_modules        = true
 
 [tool.pytest]
 [tool.pytest.ini_options]
