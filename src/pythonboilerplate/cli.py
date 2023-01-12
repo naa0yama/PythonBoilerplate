@@ -4,31 +4,20 @@
 # %%
 """cli."""
 # Standard Library
-import importlib.metadata
 from logging import INFO
 from logging import getLogger
-from os import path
+
+# Third Party Library
+import setuptools_git_versioning
 
 logger = getLogger(__name__)
 logger.setLevel(INFO)
 
 
 # %%
-def versions() -> str:
-    """Versions."""
-    __metadata = importlib.metadata.metadata(path.basename(path.dirname(__file__)))
-
-    versions: str = "{} {}".format(
-        __metadata["name"],
-        __metadata["version"],
-    )
-
-    return versions
-
-
 def main() -> None:
     """Main."""
-    logger.error(versions())
+    logger.error(setuptools_git_versioning.get_version())
 
 
 # %%
