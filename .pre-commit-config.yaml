@@ -104,6 +104,7 @@ repos:
       - id: pytest
         name: pytest
         entry: pytest
+        args: ["-c", "pyproject.toml"]
         stages:
           - "push"
         language: system
