@@ -4,7 +4,7 @@
 #files: "^subdir/"
 default_install_hook_types:
   - "pre-commit"
-#  - "pre-push"
+  - "pre-push"
 minimum_pre_commit_version: 2.21.0
 
 repos:
