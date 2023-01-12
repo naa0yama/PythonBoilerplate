@@ -2,6 +2,9 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 #files: "^subdir/"
+default_install_hook_types:
+  - "pre-commit"
+  - "pre-push"
 minimum_pre_commit_version: 2.21.0
 
 repos:
@@ -95,3 +98,15 @@ repos:
           - flake8-variables-names
           - pyproject-flake8
         args: ["--config", "pyproject.toml"]
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest
+        args: ["-c", "pyproject.toml"]
+        stages:
+          - "push"
+        language: system
+        pass_filenames: false
+        always_run: true
