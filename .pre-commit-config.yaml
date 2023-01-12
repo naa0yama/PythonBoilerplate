@@ -105,8 +105,11 @@ repos:
         name: pytest
         entry: pytest
         args: ["-c", "pyproject.toml"]
+        additional_dependencies:
+          - pytest-azurepipelines
+          - pytest-cov
         stages:
           - "push"
-        language: system
+        language: python
         pass_filenames: false
         always_run: true
