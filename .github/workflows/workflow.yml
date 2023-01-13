@@ -26,13 +26,6 @@ jobs:
           cache: "pip"
           cache-dependency-path: pyproject.toml
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install tox tox-gh-actions poetry
-
-          poetry install --no-interaction
-
       - name: Cache tox environments
         id: cache-tox
         uses: actions/cache@v3.2.3
@@ -48,6 +41,13 @@ jobs:
             'poetry.lock',
             '.pre-commit-config.yaml',
             'tox.ini') }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install tox tox-gh-actions poetry
+
+          poetry install --no-interaction
 
       - name: Run tox
         run: tox
