@@ -163,7 +163,7 @@
   "python.linting.lintOnSave": true,
   "python.linting.mypyArgs": [
     "--config-file",
-    "pyproject.toml"
+    "${workspaceFolder}/pyproject.toml"
   ],
   "python.linting.mypyCategorySeverity.error": "Error",
   "python.linting.mypyCategorySeverity.note": "Information",
