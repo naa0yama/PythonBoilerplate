@@ -103,7 +103,8 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: fish -c "pytest -c pyproject.toml"
+        entry: ./.venv/bin/pytest"
+        args: ["-c", "pyproject.toml"]
         additional_dependencies:
           - pytest-azurepipelines
           - pytest-cov
