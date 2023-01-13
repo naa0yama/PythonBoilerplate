@@ -95,6 +95,7 @@ repos:
           - flake8-print
           - flake8-return
           - flake8-simplify
+          - flake8-unused-globals
           - flake8-variables-names
           - pyproject-flake8
         args: ["--config", "pyproject.toml"]

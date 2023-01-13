@@ -823,6 +823,20 @@ astor = ">=0.1"
 flake8 = ">=3.7"
 
 [[package]]
+name = "flake8-unused-globals"
+version = "0.1.9"
+description = ""
+category = "dev"
+optional = false
+python-versions = ">=3.10,<3.11"
+files = [
+    {file = "flake8-unused-globals-0.1.9.tar.gz", hash = "sha256:d83874360337420238ea12b01c1feee7484929e32734ce8d72f653d041a6d5a7"},
+]
+
+[package.dependencies]
+flake8 = "*"
+
+[[package]]
 name = "flake8-variables-names"
 version = "0.0.5"
 description = "A flake8 extension that helps to make more readable variables names"
@@ -2337,4 +2351,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "5c8392620e2e182cda369b8fd4fed9575ce669aa5f4cde86d5c3e42d70befaa3"
+content-hash = "19ee3f8432a8b2137e84b2905aff9aa8a3107d12145ecc415fb5b588d05e1e16"
