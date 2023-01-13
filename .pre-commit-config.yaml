@@ -103,14 +103,10 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: ./.venv/bin/pytest
-        args: ["-c", "pyproject.toml", "."]
-        additional_dependencies:
-          - pytest-azurepipelines
-          - pytest-cov
-          - setuptools-git-versioning
+        entry: /bin/sh -c "cd . && .venv/bin/pytest"
+        args: ["-c", "pyproject.toml"]
         stages:
           - "push"
-        language: python
+        language: system
         pass_filenames: false
         always_run: true
