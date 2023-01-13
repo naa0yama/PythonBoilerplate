@@ -29,6 +29,7 @@ jobs:
           pip install tox tox-gh-actions poetry
 
           poetry install --no-interaction
+
       - name: Cache tox environments
         id: cache-tox
         uses: actions/cache@v3.2.3
@@ -42,7 +43,8 @@ jobs:
           key: tox-${{ matrix.python-version }}-${{ hashFiles(
             'pyproject.toml',
             'poetry.lock',
-            '.pre-commit-config.yaml') }}
+            '.pre-commit-config.yaml',
+            'tox.ini') }}
 
       - name: Run tox
         run: tox
