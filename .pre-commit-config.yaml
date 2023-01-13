@@ -103,7 +103,7 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: pytest
+        entry: fish -c "pytest"
         args: ["-c", "pyproject.toml"]
         additional_dependencies:
           - pytest-azurepipelines
