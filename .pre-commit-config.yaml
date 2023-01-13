@@ -55,8 +55,8 @@ repos:
       - id: mypy
         name: mypy
         description: "run mypy in the .venv of your local project"
-        entry: mypy
-        language: system
+        entry: ./.venv/bin/mypy
+        language: python
         types_or: [python, pyi]
         args: ["--config-file", "pyproject.toml"]
         require_serial: true
@@ -104,7 +104,7 @@ repos:
       - id: pytest
         name: pytest
         entry: ./.venv/bin/pytest
-        args: ["-c", "pyproject.toml"]
+        args: ["-c", "pyproject.toml", "."]
         additional_dependencies:
           - pytest-azurepipelines
           - pytest-cov
