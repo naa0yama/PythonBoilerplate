@@ -1,7 +1,7 @@
 ---
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
-#files: "^subdir/"
+# files: "^subdir/"
 default_install_hook_types:
   - "pre-commit"
   - "pre-push"
@@ -43,6 +43,9 @@ repos:
       - id: poetry-check
         entry: /bin/sh -c "cd . && poetry check --no-interaction"
         files: ^pyproject.toml$
+      - id: poetry-lock
+        entry: /bin/sh -c "cd . && poetry lock --no-interaction --no-update"
+        files: ^pyproject.toml$
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.11.0
@@ -55,10 +58,9 @@ repos:
       - id: mypy
         name: mypy
         description: "run mypy in the .venv of your local project"
-        entry: mypy
-        language: system
+        entry: /bin/sh -c "cd . && .venv/bin/mypy --config-file pyproject.toml src tests"
+        language: python
         types_or: [python, pyi]
-        args: ["--config-file", "pyproject.toml"]
         require_serial: true
         additional_dependencies: []
         minimum_pre_commit_version: "2.9.2"
@@ -95,6 +97,7 @@ repos:
           - flake8-print
           - flake8-return
           - flake8-simplify
+          - flake8-unused-globals
           - flake8-variables-names
           - pyproject-flake8
         args: ["--config", "pyproject.toml"]
@@ -103,7 +106,7 @@ repos:
     hooks:
       - id: pytest
         name: pytest
-        entry: pytest
+        entry: /bin/sh -c "cd . && .venv/bin/pytest"
         args: ["-c", "pyproject.toml"]
         stages:
           - "push"

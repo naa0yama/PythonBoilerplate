@@ -4,7 +4,6 @@
 # %%
 """pythonboilerplate."""
 # Standard Library
-import importlib.metadata
 from logging import ERROR
 
 # Third Party Library
@@ -13,8 +12,6 @@ import setuptools_git_versioning
 
 # First Party Library
 from pythonboilerplate.cli import main
-
-__metadata = importlib.metadata.metadata("pythonboilerplate")
 
 
 def test_main(caplog: LogCaptureFixture) -> None:
