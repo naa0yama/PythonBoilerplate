@@ -57,6 +57,7 @@ jobs:
       - name: Install dependencies
         run: |
           set -eux
+
           python -m pip install --upgrade pip
           pip install poetry==${{ env.POETRY_VERSION }}
 
