@@ -56,6 +56,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          set -eux
           python -m pip install --upgrade pip
           pip install poetry==${{ env.POETRY_VERSION }}
 
@@ -70,7 +71,10 @@ jobs:
           poetry env info
 
       - name: Run tox
-        run: tox
+        run: |
+          set -eux
+
+          poetry run tox
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3.1.1
