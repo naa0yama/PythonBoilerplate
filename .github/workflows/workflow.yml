@@ -14,7 +14,6 @@ jobs:
     env:
       OS: ubuntu-latest
       PYTHON: ${{ matrix.python-version }}
-      PRE_COMMIT_HOME: ${{ github.workspace }}/pre-commit-cache
 
     steps:
       - uses: actions/checkout@v3.3.0
@@ -31,7 +30,7 @@ jobs:
         uses: actions/cache@v3.2.3
         with:
           path: |
-            ${{ env.PRE_COMMIT_HOME }}
+            ~/.cache/pre-commit
             .tox
             .venv
           # pyproject.toml, poetry.lock and .pre-commit-config.yaml have versioning info that would
