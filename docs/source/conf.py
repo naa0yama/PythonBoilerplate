@@ -10,6 +10,28 @@ import sys
 # Third Party Library
 from sphinx_pyproject import SphinxConfig
 
-sys.path.append(os.path.abspath(f"{os.path.dirname(os.path.abspath(__file__))}/../../"))
+sys.path.append(
+    os.path.abspath(
+        os.path.dirname(
+            os.path.dirname(
+                os.path.dirname(
+                    os.path.abspath(__file__),
+                ),
+            ),
+        ),
+    ),
+)
 
-config = SphinxConfig("../../pyproject.toml", globalns=globals())
+config = SphinxConfig(
+    os.path.join(
+        os.path.abspath(
+            os.path.dirname(
+                os.path.dirname(
+                    os.path.dirname(os.path.abspath(__file__)),
+                ),
+            ),
+        ),
+        "pyproject.toml",
+    ),
+    globalns=globals(),
+)
