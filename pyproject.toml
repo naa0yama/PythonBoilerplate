@@ -168,6 +168,12 @@ enabled                    = true
 [tool.sphinx-pyproject]
 autosummary_generate       = true
 copyright                  = "2022, naa0yama"
+exclude_patterns = [
+    "_build",
+    ".DS_Store",
+    ".gitkeep",
+    "Thumbs.db",
+]
 extensions                 = [
     'sphinx.ext.autosummary',
     "sphinx.ext.autodoc",
