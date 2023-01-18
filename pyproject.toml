@@ -187,8 +187,8 @@ todo_include_todos         = true
 [tool.taskipy.tasks]
 test                       = "pytest"
 testview                   = "python3 -m http.server 8000 --directory htmlcov/"
-docs                       = "sphinx-apidoc -F -o docs/source src && sphinx-build docs/source docs/build"
-docslive                   = "sphinx-autobuild docs/source/ docs/build/"
+docs                       = "sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build"
+docslive                   = "sphinx-autobuild --watch src docs docs/_build"
 
 [build-system]
 requires                   = [

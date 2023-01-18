@@ -14,9 +14,7 @@ sys.path.append(
     os.path.abspath(
         os.path.dirname(
             os.path.dirname(
-                os.path.dirname(
-                    os.path.abspath(__file__),
-                ),
+                os.path.abspath(__file__),
             ),
         ),
     ),
@@ -26,9 +24,7 @@ config = SphinxConfig(
     os.path.join(
         os.path.abspath(
             os.path.dirname(
-                os.path.dirname(
-                    os.path.dirname(os.path.abspath(__file__)),
-                ),
+                os.path.dirname(os.path.abspath(__file__)),
             ),
         ),
         "pyproject.toml",
