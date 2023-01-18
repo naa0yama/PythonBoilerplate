@@ -194,7 +194,7 @@ todo_include_todos         = true
 test                       = "pytest"
 testview                   = "python3 -m http.server 8000 --directory htmlcov/"
 docs                       = "sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build"
-docslive                   = "sphinx-autobuild --watch src docs docs/_build"
+docslive                   = "sphinx-autobuild --pre-build 'sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build' --watch src docs docs/_build"
 
 [build-system]
 requires                   = [
