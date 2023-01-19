@@ -2,7 +2,8 @@
 # To add a new cell, type '# %%'
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
-"""cli."""
+"""Command line tool."""
+
 # Standard Library
 from logging import INFO
 from logging import getLogger
@@ -16,7 +17,10 @@ logger.setLevel(INFO)
 
 # %%
 def main() -> None:
-    """Main."""
+    """Main function.
+
+    Logger output version.
+    """
     logger.error(setuptools_git_versioning.get_version())
 
 

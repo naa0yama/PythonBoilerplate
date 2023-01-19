@@ -418,8 +418,10 @@ functions/
 tmp.**
 
 # sphinx
-docs/source/*
-!docs/source/conf.py
+docs/
+!docs/conf.py
 
 # pytest-azurepipelines
 **/test-output.xml
+
+# Unknown

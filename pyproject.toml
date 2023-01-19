@@ -168,6 +168,12 @@ enabled                    = true
 [tool.sphinx-pyproject]
 autosummary_generate       = true
 copyright                  = "2022, naa0yama"
+exclude_patterns = [
+    "_build",
+    ".DS_Store",
+    ".gitkeep",
+    "Thumbs.db",
+]
 extensions                 = [
     'sphinx.ext.autosummary',
     "sphinx.ext.autodoc",
@@ -187,8 +193,8 @@ todo_include_todos         = true
 [tool.taskipy.tasks]
 test                       = "pytest"
 testview                   = "python3 -m http.server 8000 --directory htmlcov/"
-docs                       = "sphinx-apidoc -F -o docs/source src && sphinx-build docs/source docs/build"
-docslive                   = "sphinx-autobuild docs/source/ docs/build/"
+docs                       = "sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build"
+docslive                   = "sphinx-autobuild --pre-build 'sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build' --watch src docs docs/_build"
 
 [build-system]
 requires                   = [
