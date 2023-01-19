@@ -193,8 +193,12 @@ todo_include_todos         = true
 [tool.taskipy.tasks]
 test                       = "pytest"
 testview                   = "python3 -m http.server 8000 --directory htmlcov/"
-docs                       = "sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build"
-docslive                   = "sphinx-autobuild --pre-build 'sphinx-apidoc -F -o docs src && sphinx-build docs docs/_build' --watch src docs docs/_build"
+
+docs                       = "task doc_cleanup && task docs_apidoc && task docs_build"
+doc_cleanup                = "rm -rfv docs/*.rst docs/*.bat docs/Makefile"
+docs_apidoc                = "sphinx-apidoc -F -e -d 2 -o docs src"
+docs_build                 = "sphinx-build docs docs/_build"
+docslive                   = "task docs && sphinx-autobuild --watch src docs docs/_build"
 
 [build-system]
 requires                   = [
