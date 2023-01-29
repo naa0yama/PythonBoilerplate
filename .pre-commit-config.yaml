@@ -38,7 +38,7 @@ repos:
         args: ["-c=.yamllint.yml"]
 
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.3.1
+    rev: 1.3.2
     hooks:
       - id: poetry-check
         entry: /bin/sh -c "cd . && poetry check --no-interaction"
