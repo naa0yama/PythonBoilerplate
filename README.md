@@ -4,7 +4,6 @@
 
 Python で開発する時用ボイラープレート
 
-
 ## チュートリアル
 
 [VSCode で極力手を抜いて開発するハンドブック](https://zenn.dev/naa0yama/books/python-boilerplate) を書きました
