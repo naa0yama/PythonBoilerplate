@@ -3,4 +3,3 @@
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
 """pythonboilerplate."""
-__version__ = "0.1.0"
