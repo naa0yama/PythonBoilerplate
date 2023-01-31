@@ -162,7 +162,7 @@ addopts                    = [
     "--verbose",
     "--durations=0",
     "--cov=src",
-    "--cov=tests",
+    "--cov-branch",
     "--cov-report=term",
     "--cov-report=term-missing",
     "--cov-report=term-missing",
