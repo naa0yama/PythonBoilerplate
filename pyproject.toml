@@ -25,7 +25,7 @@ setuptools-git-versioning  = "~1.13.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel                  = "~6.19.4"
-pip                        = "^22.0.0"
+pip                        = "^23.0.0"
 pre-commit                 = "~3.0.0"
 taskipy                    = "~1.10.3"
 tox                        = "~4.4.0"
