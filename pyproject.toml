@@ -66,7 +66,7 @@ flake8-simplify            = "~0.20.0"
 flake8-unused-globals      = "~0.1.9"
 flake8-variables-names     = "~0.0.4"
 isort                      = "~5.12.0"
-mypy                       = "~1.1.0"
+mypy                       = "~1.2.0"
 pyproject-flake8           = "~6.0.0"
 
 [tool.black]
