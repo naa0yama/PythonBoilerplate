@@ -47,7 +47,7 @@ pytest-mock                = "~3.10.0"
 types-requests             = "~2.28.11.8"
 
 [tool.poetry.group.linting.dependencies]
-autoflake                  = "~2.0"
+autoflake                  = "~2.1.0"
 black                      = "~23.3.0"
 flake8                     = "~6.0.0"
 flake8-annotations         = "~3.0.0"
