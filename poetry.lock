@@ -2326,31 +2326,31 @@ files = [
 
 [[package]]
 name = "tox"
-version = "4.5.2"
+version = "4.6.2"
 description = "tox is a generic virtualenv management and test command line tool"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "tox-4.5.2-py3-none-any.whl", hash = "sha256:f1a9541b292aa0449f6c7bb67dc0073f25f9086413c3922fe47f5168cbf7b2f4"},
-    {file = "tox-4.5.2.tar.gz", hash = "sha256:ad87fb7a10ef476afb6eb7e408808057f42976ef0d30ad5fe023099ba493ce58"},
+    {file = "tox-4.6.2-py3-none-any.whl", hash = "sha256:52241851a7b0cd7de07d6ef067a13b092d2a4f82fe9048efb2444aed1708d713"},
+    {file = "tox-4.6.2.tar.gz", hash = "sha256:58c7c2acce2f3d44cd1b359349557162336288ecf19ef53ccda89c9cee0ad9c4"},
 ]
 
 [package.dependencies]
-cachetools = ">=5.3"
+cachetools = ">=5.3.1"
 chardet = ">=5.1"
 colorama = ">=0.4.6"
-filelock = ">=3.12"
+filelock = ">=3.12.2"
 packaging = ">=23.1"
-platformdirs = ">=3.5.1"
+platformdirs = ">=3.5.3"
 pluggy = ">=1"
-pyproject-api = ">=1.5.1"
+pyproject-api = ">=1.5.2"
 tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
-virtualenv = ">=20.23"
+virtualenv = ">=20.23.1"
 
 [package.extras]
-docs = ["furo (>=2023.5.20)", "sphinx (>=7.0.1)", "sphinx-argparse-cli (>=1.11)", "sphinx-autodoc-typehints (>=1.23,!=1.23.4)", "sphinx-copybutton (>=0.5.2)", "sphinx-inline-tabs (>=2023.4.21)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=22.12)"]
-testing = ["build[virtualenv] (>=0.10)", "covdefaults (>=2.3)", "devpi-process (>=0.3)", "diff-cover (>=7.5)", "distlib (>=0.3.6)", "flaky (>=3.7)", "hatch-vcs (>=0.3)", "hatchling (>=1.17)", "psutil (>=5.9.5)", "pytest (>=7.3.1)", "pytest-cov (>=4.1)", "pytest-mock (>=3.10)", "pytest-xdist (>=3.3.1)", "re-assert (>=1.1)", "time-machine (>=2.9)", "wheel (>=0.40)"]
+docs = ["furo (>=2023.5.20)", "sphinx (>=7.0.1)", "sphinx-argparse-cli (>=1.11.1)", "sphinx-autodoc-typehints (>=1.23.2,!=1.23.4)", "sphinx-copybutton (>=0.5.2)", "sphinx-inline-tabs (>=2023.4.21)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=23.6)"]
+testing = ["build[virtualenv] (>=0.10)", "covdefaults (>=2.3)", "detect-test-pollution (>=1.1.1)", "devpi-process (>=0.3.1)", "diff-cover (>=7.6)", "distlib (>=0.3.6)", "flaky (>=3.7)", "hatch-vcs (>=0.3)", "hatchling (>=1.17.1)", "psutil (>=5.9.5)", "pytest (>=7.3.2)", "pytest-cov (>=4.1)", "pytest-mock (>=3.11.1)", "pytest-xdist (>=3.3.1)", "re-assert (>=1.1)", "time-machine (>=2.10)", "wheel (>=0.40)"]
 
 [[package]]
 name = "tox-gh-actions"
@@ -2479,4 +2479,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "08c73b0a1354d768a3d4bb0329908c96215c903b7c8465ef7eccc707bf6e7af3"
+content-hash = "712bc57b3f5a0213fe68629f6c7dd94557a0af9f49b3e36f2abb6269281c0366"
