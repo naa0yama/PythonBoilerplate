@@ -40,8 +40,8 @@ sphinx-pyproject           = "~0.1.0"
 [tool.poetry.group.tests.dependencies]
 pytest                     = "~7.3.0"
 pytest-azurepipelines      = "~1.0.4"
-pytest-cov                 = "~4.0.0"
-pytest-mock                = "~3.10.0"
+pytest-cov                 = "~4.1.0"
+pytest-mock                = "~3.11.0"
 
 [tool.poetry.group.types.dependencies]
 types-requests             = "~2.28.11.8"
