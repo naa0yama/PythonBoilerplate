@@ -38,7 +38,7 @@ sphinx-autobuild           = "~2021.3.14"
 sphinx-pyproject           = "~0.1.0"
 
 [tool.poetry.group.tests.dependencies]
-pytest                     = "~7.3.0"
+pytest                     = "~7.4.0"
 pytest-azurepipelines      = "~1.0.4"
 pytest-cov                 = "~4.1.0"
 pytest-mock                = "~3.11.0"
