@@ -2006,14 +2006,14 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "setuptools-git-versioning"
-version = "1.13.4"
+version = "1.13.5"
 description = "Use git repo data for building a version number according PEP-440"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "setuptools-git-versioning-1.13.4.tar.gz", hash = "sha256:0edb4aef1661eb84b6eff729e66c13ac8bc34baad035a05aaccfb46d4bbd5fcd"},
-    {file = "setuptools_git_versioning-1.13.4-py3-none-any.whl", hash = "sha256:9d6fba8b68ff8c296bd89422fed6c3500b4af48a606d8835a887292acc1a9867"},
+    {file = "setuptools-git-versioning-1.13.5.tar.gz", hash = "sha256:af9ad1e8103b5abb5b128c2db4fef99407328ac9c12f65d3ff9550c4bb39ad1c"},
+    {file = "setuptools_git_versioning-1.13.5-py3-none-any.whl", hash = "sha256:0c7a5a3e138c85385c8296e248673652173535f33889010f9213497635300cf3"},
 ]
 
 [package.dependencies]
