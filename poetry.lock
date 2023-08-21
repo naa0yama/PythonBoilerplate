@@ -2137,14 +2137,14 @@ docs = ["furo", "ipython", "myst-parser", "sphinx-copybutton", "sphinx-inline-ta
 
 [[package]]
 name = "sphinx-pyproject"
-version = "0.1.0"
+version = "0.3.0"
 description = "Move some of your Sphinx configuration into pyproject.toml"
 category = "dev"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "sphinx_pyproject-0.1.0-py3-none-any.whl", hash = "sha256:aaa974eb1bf9456c4bf9f97c9e1eb19469e337b5d30271f163085014ef7a8365"},
-    {file = "sphinx_pyproject-0.1.0.tar.gz", hash = "sha256:c2525c3c473a771e95fca4691da0e35aebcc459ff618a7912d9b57bc995eef3d"},
+    {file = "sphinx_pyproject-0.3.0-py3-none-any.whl", hash = "sha256:3aca968919f5ecd390f96874c3f64a43c9c7fcfdc2fd4191a781ad9228501b52"},
+    {file = "sphinx_pyproject-0.3.0.tar.gz", hash = "sha256:efc4ee9d96f579c4e4ed1ac273868c64565e88c8e37fe6ec2dc59fbcd57684ab"},
 ]
 
 [package.dependencies]
@@ -2499,4 +2499,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "11fc790798c934f273da71519a562d16a20861221b66f7623ad9b02b813a396f"
+content-hash = "82bdad7e532f2533a173e40de0733430032142f885258dcec5abcee2a7ade284"
