@@ -2307,14 +2307,14 @@ tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
 name = "taskipy"
-version = "1.11.0"
+version = "1.12.0"
 description = "tasks runner for python projects"
 category = "dev"
 optional = false
 python-versions = ">=3.6,<4.0"
 files = [
-    {file = "taskipy-1.11.0-py3-none-any.whl", hash = "sha256:4e40cd41747a54bc8a9b3c21057c25cac645309c2d8ac897bdc1e7235e9c900e"},
-    {file = "taskipy-1.11.0.tar.gz", hash = "sha256:521e8b3b65dc1ff9bb036cae989dbe5aec1626a61cf4744e5c0d0d2450c7fcb4"},
+    {file = "taskipy-1.12.0-py3-none-any.whl", hash = "sha256:38306fbc952a7ca314b8f842a74b2fc38535cdab21031fe89e714a83e6259a84"},
+    {file = "taskipy-1.12.0.tar.gz", hash = "sha256:e3dd7c53f7c9c4fd17dc908b1037f545afc452907eb0953b84e91c0a9a9d809d"},
 ]
 
 [package.dependencies]
@@ -2523,4 +2523,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.10"
-content-hash = "82bdad7e532f2533a173e40de0733430032142f885258dcec5abcee2a7ade284"
+content-hash = "51f4921c1b85bd8092d4f7516d9192a2db73084116b65bf83de7ffe5f9f6237d"
