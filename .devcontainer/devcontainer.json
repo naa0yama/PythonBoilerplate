@@ -31,6 +31,7 @@
         "ms-python.black-formatter", //                Black Formatter
         "ms-python.flake8", //                         Flake8
         "ms-python.isort", //                          isort
+        "ms-python.mypy-type-checker", //              Mypy Type Checker
         "ms-python.python", //                         Python
         "ms-python.vscode-pylance", //                 Pylance
         "ms-toolsai.jupyter", //                       Jupyter
@@ -38,6 +39,7 @@
         "ms-vscode-remote.remote-wsl", //              WSL
         "njpwerner.autodocstring", //                  autoDocstring - Python Docstring Generator
         "oderwat.indent-rainbow", //                   indent-rainbow
+        "redhat.vscode-yaml", //                       YAML
         "ruiquelhas.vscode-lowercase", //              lowercase
         "ruiquelhas.vscode-uppercase", //              uppercase
         "ryanluker.vscode-coverage-gutters", //        Coverage Gutters
