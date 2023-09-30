@@ -75,8 +75,9 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     },
-    "editor.defaultFormatter": "ms-python.python",
-    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.tabSize": 4
   },
   "[toml]": {
@@ -137,7 +138,6 @@
   "ansible.ansible.path": "${workspaceFolder}/.venv/bin/ansible",
   "ansible.python.activationScript": "${workspaceFolder}/.venv/bin/activate",
   "ansible.python.interpreterPath": "${workspaceFolder}/.venv/bin/python3",
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Python */
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python3",
@@ -150,27 +150,6 @@
     ".direnv",
     ".venv"
   ],
-  /* ---------------------------------------------------------------------------
-    * Formatting */
-  "python.formatting.blackArgs": [],
-  "python.formatting.blackPath": "${workspaceFolder}/.venv/bin/black",
-  "python.formatting.provider": "black",
-  /* ---------------------------------------------------------------------------
-    * Python の設定 linting */
-  "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "${workspaceFolder}/.venv/bin/pflake8",
-  "python.linting.lintOnSave": true,
-  "python.linting.mypyArgs": [
-    "--config-file",
-    "${workspaceFolder}/pyproject.toml"
-  ],
-  "python.linting.mypyCategorySeverity.error": "Error",
-  "python.linting.mypyCategorySeverity.note": "Information",
-  "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "${workspaceFolder}/.venv/bin/mypy",
-  "python.linting.pycodestyleEnabled": false,
-  "python.linting.pylintEnabled": false,
   /* ---------------------------------------------------------------------------
     * Python の設定 testing */
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
@@ -185,6 +164,34 @@
   "testing.automaticallyOpenPeekViewDuringAutoRun": true,
   // Extension: autoDocstring - Python Docstring Generator
   "autoDocstring.docstringFormat": "google",
+  // Extension: Black Formatter
+  "black-formatter.args": [],
+  "black-formatter.path": [
+    "${workspaceFolder}/.venv/bin/black"
+  ],
+  "black-formatter.interpreter": [
+    "${workspaceFolder}/.venv/bin/python3"
+  ],
+  // Extension: Flake8
+  "flake8.args": [],
+  "flake8.path": [
+    "${workspaceFolder}/.venv/bin/pflake8"
+  ],
+  // Extension: Mypy Type Checker
+  "mypy-type-checker.args": [
+    "--config-file",
+    "${workspaceFolder}/pyproject.toml"
+  ],
+  "mypy-type-checker.severity": {
+    "error": "Error",
+    "note": "Information"
+  },
+  "mypy-type-checker.path": [
+    "${workspaceFolder}/.venv/bin/mypy"
+  ],
+  "mypy-type-checker.interpreter": [
+    "${workspaceFolder}/.venv/bin/python3"
+  ],
   // Extension: Pylance
   "python.analysis.autoImportCompletions": true,
   "python.analysis.autoImportUserSymbols": true,
@@ -197,9 +204,9 @@
   "python.analysis.typeCheckingMode": "off",
   // Extension: Jupyter
   "jupyter.askForKernelRestart": false,
-  "jupyter.enableAutoMoveToNextCell": false,
-  "jupyter.notebookFileRoot": "${workspaceFolder}", // Jupyter notebook の root directory を プロジェクトroot にする
-  "jupyter.sendSelectionToInteractiveWindow": true,
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.interactiveWindow.textEditor.autoMoveToNextCell": false,
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
@@ -220,7 +227,6 @@
   "testExplorer.showOnRun": true,
   "testExplorer.sort": null,
   "testExplorer.useNativeTesting": false,
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Partial Diff */
   "partialDiff.commandsOnContextMenu": {
@@ -230,22 +236,18 @@
     "markSection2AndTakeDiff": true,
     "togglePreComparisonTextNormalizationRules": true
   },
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Prettier - Code formatter */
   "prettier.enable": true,
   "prettier.singleQuote": false,
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Markdown PDF */
   "markdown-pdf.styles": [
     "markdown-pdf.css"
   ],
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Ansible */
   "redhat.telemetry.enabled": false,
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Coverage Gutters */
   "coverage-gutters.coverageFileNames": [
@@ -260,11 +262,9 @@
   "coverage-gutters.showGutterCoverage": true,
   "coverage-gutters.showLineCoverage": true,
   "coverage-gutters.showRulerCoverage": true,
-  /****************************************************************************/
   /*****************************************************************************
    * Extension: Markdown All in One */
   "markdown.extension.list.indentationSize": "inherit",
-  /****************************************************************************/
   /*****************************************************************************
    * Unknown: */
 }
