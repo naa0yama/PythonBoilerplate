@@ -1,4 +1,4 @@
-FROM python:3.10.10-slim-bullseye
+FROM python:3.10.12-slim-bullseye
 ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
