@@ -258,7 +258,9 @@
     "coverage.cobertura.xml"
   ],
   "coverage-gutters.ignoredPathGlobs": "**/{.mypy_cache,.pytest_cache,.tox,.venv,node_modules,,vendor,venv}/**",
-  "coverage-gutters.manualCoverageFilePaths": [],
+  "coverage-gutters.manualCoverageFilePaths": [
+    "${workspaceFolder}/coverage.xml"
+  ],
   "coverage-gutters.showGutterCoverage": true,
   "coverage-gutters.showLineCoverage": true,
   "coverage-gutters.showRulerCoverage": true,
