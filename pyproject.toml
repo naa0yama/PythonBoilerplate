@@ -48,7 +48,7 @@ types-requests             = "~2.28.11.8"
 
 [tool.poetry.group.linting.dependencies]
 autoflake                  = "~2.2.0"
-black                      = "~23.9.0"
+black                      = "~23.12.0"
 flake8                     = "~6.1.0"
 flake8-annotations         = "~3.0.0"
 flake8-black               = "~0.3.2"
