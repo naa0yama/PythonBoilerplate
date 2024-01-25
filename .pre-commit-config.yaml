@@ -42,10 +42,12 @@ repos:
     hooks:
       - id: poetry-check
         entry: /bin/sh -c "cd . && poetry check --no-interaction"
-        files: ^pyproject.toml$
+        pass_filenames: false
+        files: ^(.*/)?pyproject\.toml$
       - id: poetry-lock
         entry: /bin/sh -c "cd . && poetry lock --no-interaction --no-update"
-        files: ^pyproject.toml$
+        pass_filenames: false
+        files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.13.2
