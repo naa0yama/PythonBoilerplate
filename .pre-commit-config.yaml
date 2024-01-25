@@ -41,11 +41,11 @@ repos:
     rev: 1.7.1
     hooks:
       - id: poetry-check
-        entry: /bin/sh -c "cd . && poetry check --no-ansi --no-interaction"
+        entry: /bin/sh -c "cd . && poetry check --no-ansi --no-interaction --no-cache"
         pass_filenames: false
         files: ^(.*/)?pyproject\.toml$
       - id: poetry-lock
-        entry: /bin/sh -c "cd . && poetry lock --no-ansi --no-interaction --no-update"
+        entry: /bin/sh -c "cd . && poetry lock --no-ansi --no-interaction --no-cache --no-update"
         pass_filenames: false
         files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
