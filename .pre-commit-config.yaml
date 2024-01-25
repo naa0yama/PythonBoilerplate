@@ -32,20 +32,22 @@ repos:
       - id: detect-private-key
 
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.32.0
+    rev: v1.33.0
     hooks:
       - id: yamllint
         args: ["-c=.yamllint.yml"]
 
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.4.2
+    rev: 1.7.1
     hooks:
       - id: poetry-check
-        entry: /bin/sh -c "cd . && poetry check --no-interaction"
-        files: ^pyproject.toml$
+        entry: /bin/sh -c "cd . && poetry check --no-ansi --no-interaction --no-cache"
+        pass_filenames: false
+        files: ^(.*/)?pyproject\.toml$
       - id: poetry-lock
-        entry: /bin/sh -c "cd . && poetry lock --no-interaction --no-update"
-        files: ^pyproject.toml$
+        entry: /bin/sh -c "cd . && poetry lock --no-ansi --no-interaction --no-cache --no-update"
+        pass_filenames: false
+        files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
   - repo: https://github.com/PyCQA/isort
     rev: 5.13.2
