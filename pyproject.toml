@@ -19,9 +19,9 @@ description                = "Python を開発する時用ボイラープレー�
 name                       = "Naoki Aoyama"
 
 [tool.poetry.dependencies]
-python                     = "~3.10"
+python                     = "3.10.13"
 
-setuptools-git-versioning  = "~1.13.1"
+setuptools-git-versioning  = "1.13.5"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel                  = "~6.29.0"
