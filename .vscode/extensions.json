@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "charliermarsh.ruff", //                       Ruff
     "christian-kohler.path-intellisense", //       Path Intellisense
     "DavidAnson.vscode-markdownlint", //           markdownlint
     "docsmsft.docs-images", //                     docs-images
