@@ -73,9 +73,9 @@
   },
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.tabSize": 4
@@ -213,10 +213,6 @@
   },
   "notebook.outline.showCodeCells": true,
   "notebook.output.textLineLimit": 3000,
-  // Extension: isort
-  "isort.path": [
-    "${workspaceFolder}/.venv/bin/isort"
-  ],
   // Extension: Python Test Explorer for Visual Studio Code
   "pythonTestExplorer.testFramework": "pytest",
   "testExplorer.addToEditorContextMenu": true,
