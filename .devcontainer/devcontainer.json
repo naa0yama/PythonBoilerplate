@@ -30,7 +30,6 @@
         "ms-azuretools.vscode-docker", //              Docker
         "ms-python.black-formatter", //                Black Formatter
         "ms-python.flake8", //                         Flake8
-        "ms-python.isort", //                          isort
         "ms-python.mypy-type-checker", //              Mypy Type Checker
         "ms-python.python", //                         Python
         "ms-python.vscode-pylance", //                 Pylance
