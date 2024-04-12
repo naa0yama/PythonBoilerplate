@@ -16,7 +16,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "bungcip.better-toml", //                      Better TOML
         "christian-kohler.path-intellisense", //       Path Intellisense
         "DavidAnson.vscode-markdownlint", //           markdownlint
         "docsmsft.docs-images", //                     docs-images
@@ -44,6 +43,7 @@
         "ruiquelhas.vscode-uppercase", //              uppercase
         "ryanluker.vscode-coverage-gutters", //        Coverage Gutters
         "ryu1kn.partial-diff", //                      Partial Diff
+        "tamasfe.even-better-toml", //                 Even Better TOML
         "usernamehw.errorlens", //                     Error Lens
         "wholroyd.jinja", //                           Jinja
         "yzhang.markdown-all-in-one" //                Markdown All in One
