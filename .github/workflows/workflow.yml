@@ -78,7 +78,7 @@ jobs:
           poetry run tox
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.6
+        uses: codecov/codecov-action@v4.3.1
         with:
           # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
           file: ./coverage.xml
