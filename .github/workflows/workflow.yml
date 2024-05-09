@@ -78,10 +78,11 @@ jobs:
           poetry run tox
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.6
+        uses: codecov/codecov-action@v4
         with:
-          # token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          fail_ci_if_error: true # optional (default = false)
           file: ./coverage.xml
           flags: pytest
           env_vars: OS,PYTHON
-          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }} # required
+          verbose: true # optional (default = false)
