@@ -67,6 +67,7 @@ flake8-variables-names = "~0.0.4"
 isort = "~5.13.0"
 mypy = "~1.8.0"
 pyproject-flake8 = "~6.1.0"
+ruff = "^0.3.7"
 
 [tool.black]
 line-length = 99

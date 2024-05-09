@@ -223,6 +223,10 @@
   "testExplorer.showOnRun": true,
   "testExplorer.sort": null,
   "testExplorer.useNativeTesting": false,
+  // Ruff
+  "ruff.lint.args": [
+    "--config=${workspaceFolder}/pyproject.toml",
+  ],
   /*****************************************************************************
    * Extension: Partial Diff */
   "partialDiff.commandsOnContextMenu": {
