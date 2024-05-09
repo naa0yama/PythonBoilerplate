@@ -69,21 +69,50 @@ mypy = "~1.8.0"
 pyproject-flake8 = "~6.1.0"
 ruff = "^0.3.7"
 
-[tool.black]
-line-length = 99
-exclude = '''
-(
-    migrations
-    | .mypy_cache
-    | .pytest_cache
-    | .tox
-    | .venv
-    | .history
-)
-'''
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
 
-[tool.flake8]
-max-line-length = 99
+fix = true
+# Same as Black.
+line-length = 99
+indent-width = 4
+
+# Assume Python 3.10
+target-version = "py310"
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [ "ALL" ]
 # E203: ":"の前の空白を入れないルール
 # E501: 演算子の前に改行しないようにするルール
 # W503: 二項演算子の後に改行が存在する
@@ -91,40 +120,61 @@ max-line-length = 99
 ignore = [
     "E203",
     "E501",
-    "W503",
     "ANN101",
 ]
-docstring-convention = "google"
-exclude = [
-    ".git",
-    "__pychache__",
-    "build",
-    "dist",
-    ".tox",
-    ".venv",
-    ".aws-sam",
-    ".mypy_cache",
-    ".pytest_cache",
-    ".history",
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = [ "ALL" ]
+# unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = [
+    "S101", #    asserts allowed in tests...
+    "FBT", #     don't care about booleans as positional arguments in tests
+    "INP001", #  no implicit namespace
+    "D", #       don"t care about documentation in tests
+    "S603", #   `subprocess` call: check for execution of untrusted input
+    "PLR2004", # Magic value used in comparison, consider replacing with a constant variable
 ]
 
-[tool.isort]
-force_single_line = true
-force_sort_within_sections = true
-import_heading_firstparty = "First Party Library"
-import_heading_localfolder = "Local Library"
-import_heading_stdlib = "Standard Library"
-import_heading_thirdparty = "Third Party Library"
-include_trailing_comma = true
-line_length = 99
-profile = "black"
-skip = [
-    ".history",
-    ".mypy_cache",
-    ".pytest_cache",
-    ".tox",
-    ".venv",
-]
+[tool.ruff.lint.pydocstyle]
+# Use Google-style docstrings.
+convention = "google"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+force-sort-within-sections = true
+default-section = "third-party"
 
 [tool.mypy]
 # Ref: https://mypy.readthedocs.io/en/stable/config_file.html?highlight=pyproject
