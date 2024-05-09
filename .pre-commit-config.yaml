@@ -49,6 +49,18 @@ repos:
         pass_filenames: false
         files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        description: "run mypy in the .venv of your local project"
+        entry: /bin/sh -c "cd . && .venv/bin/mypy --config-file pyproject.toml src tests"
+        language: python
+        types_or: [python, pyi]
+        require_serial: true
+        additional_dependencies: []
+        minimum_pre_commit_version: "2.9.2"
+
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: v0.4.3
     hooks:

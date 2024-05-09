@@ -10,10 +10,12 @@ Python で開発する時用ボイラープレート
 
 ## Memo
 
-* 2024-04-12
+* 2024-05-09
   * Ruff
     * Linter
     * Formatter
+  * Type Checker
+    * mypy
 
 * 2024-04-12
   * Linter
