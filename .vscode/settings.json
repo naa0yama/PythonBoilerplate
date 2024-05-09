@@ -172,11 +172,6 @@
   "black-formatter.interpreter": [
     "${workspaceFolder}/.venv/bin/python3"
   ],
-  // Extension: Flake8
-  "flake8.args": [],
-  "flake8.path": [
-    "${workspaceFolder}/.venv/bin/pflake8"
-  ],
   // Extension: Mypy Type Checker
   "mypy-type-checker.args": [
     "--config-file",
