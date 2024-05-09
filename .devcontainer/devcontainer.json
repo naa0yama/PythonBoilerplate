@@ -16,7 +16,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "bungcip.better-toml", //                      Better TOML
+        "charliermarsh.ruff", //                       Ruff
         "christian-kohler.path-intellisense", //       Path Intellisense
         "DavidAnson.vscode-markdownlint", //           markdownlint
         "docsmsft.docs-images", //                     docs-images
@@ -25,12 +25,8 @@
         "eamodio.gitlens", //                          GitLens — Git supercharged
         "esbenp.prettier-vscode", //                   Prettier - Code formatter
         "Gruntfuggly.todo-tree", //                    Todo Tree
-        "hadenlabs.ghq-project-manager", //            ghq project manager
         "littlefoxteam.vscode-python-test-adapter", // Python Test Explorer for Visual Studio Code
         "ms-azuretools.vscode-docker", //              Docker
-        "ms-python.black-formatter", //                Black Formatter
-        "ms-python.flake8", //                         Flake8
-        "ms-python.isort", //                          isort
         "ms-python.mypy-type-checker", //              Mypy Type Checker
         "ms-python.python", //                         Python
         "ms-python.vscode-pylance", //                 Pylance
@@ -44,6 +40,7 @@
         "ruiquelhas.vscode-uppercase", //              uppercase
         "ryanluker.vscode-coverage-gutters", //        Coverage Gutters
         "ryu1kn.partial-diff", //                      Partial Diff
+        "tamasfe.even-better-toml", //                 Even Better TOML
         "usernamehw.errorlens", //                     Error Lens
         "wholroyd.jinja", //                           Jinja
         "yzhang.markdown-all-in-one" //                Markdown All in One

@@ -49,12 +49,6 @@ repos:
         pass_filenames: false
         files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
-  - repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-        args: ["--settings-file", "pyproject.toml"]
-
   - repo: local
     hooks:
       - id: mypy
@@ -67,42 +61,13 @@ repos:
         additional_dependencies: []
         minimum_pre_commit_version: "2.9.2"
 
-  - repo: https://github.com/psf/black
-    rev: 24.2.0
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.4.3
     hooks:
-      - id: black
-        args: ["--config", "pyproject.toml"]
-        verbose: true
-
-  - repo: https://github.com/asottile/blacken-docs
-    rev: 1.16.0
-    hooks:
-      - id: blacken-docs
-        entry: "/bin/sh -c 'cd . && blacken-docs'"
-
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.1.0
-    hooks:
-      - id: flake8
-        entry: pflake8
-        additional_dependencies:
-          - flake8-annotations
-          - flake8-black
-          - flake8-bugbear
-          - flake8-builtins
-          - flake8-commas
-          - flake8-comprehensions
-          - flake8-debugger
-          - flake8-docstrings
-          - flake8-fixme
-          - flake8-isort
-          - flake8-print
-          - flake8-return
-          - flake8-simplify
-          - flake8-unused-globals
-          - flake8-variables-names
-          - pyproject-flake8
-        args: ["--config", "pyproject.toml"]
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+        types_or: [python, pyi]
 
   - repo: local
     hooks:

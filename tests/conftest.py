@@ -3,8 +3,8 @@
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
 """test top conftest."""
-# Standard Library
-import os
+
+from pathlib import Path
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), "src"))
+sys.path.append(str(f"{Path(__file__).parent}/src"))

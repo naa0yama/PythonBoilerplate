@@ -73,12 +73,11 @@
   },
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
     },
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4,
   },
   "[toml]": {
     "editor.tabSize": 4
@@ -164,19 +163,6 @@
   "testing.automaticallyOpenPeekViewDuringAutoRun": true,
   // Extension: autoDocstring - Python Docstring Generator
   "autoDocstring.docstringFormat": "google",
-  // Extension: Black Formatter
-  "black-formatter.args": [],
-  "black-formatter.path": [
-    "${workspaceFolder}/.venv/bin/black"
-  ],
-  "black-formatter.interpreter": [
-    "${workspaceFolder}/.venv/bin/python3"
-  ],
-  // Extension: Flake8
-  "flake8.args": [],
-  "flake8.path": [
-    "${workspaceFolder}/.venv/bin/pflake8"
-  ],
   // Extension: Mypy Type Checker
   "mypy-type-checker.args": [
     "--config-file",
@@ -213,10 +199,6 @@
   },
   "notebook.outline.showCodeCells": true,
   "notebook.output.textLineLimit": 3000,
-  // Extension: isort
-  "isort.path": [
-    "${workspaceFolder}/.venv/bin/isort"
-  ],
   // Extension: Python Test Explorer for Visual Studio Code
   "pythonTestExplorer.testFramework": "pytest",
   "testExplorer.addToEditorContextMenu": true,
@@ -227,6 +209,12 @@
   "testExplorer.showOnRun": true,
   "testExplorer.sort": null,
   "testExplorer.useNativeTesting": false,
+  // Extension: Ruff
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.lint.args": [
+    "--config=${workspaceFolder}/pyproject.toml",
+  ],
+  "ruff.showNotifications": "always",
   /*****************************************************************************
    * Extension: Partial Diff */
   "partialDiff.commandsOnContextMenu": {

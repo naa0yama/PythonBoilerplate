@@ -3,31 +3,17 @@
 # To add a new markdown cell, type '# %% [markdown]'
 # %%
 """conf."""
+
 # Standard Library
-import os
+from pathlib import Path
 import sys
 
 # Third Party Library
 from sphinx_pyproject import SphinxConfig
 
-sys.path.append(
-    os.path.abspath(
-        os.path.dirname(
-            os.path.dirname(
-                os.path.abspath(__file__),
-            ),
-        ),
-    ),
-)
+sys.path.append(f"{Path(__file__).parent.parent}")
 
 config = SphinxConfig(
-    os.path.join(
-        os.path.abspath(
-            os.path.dirname(
-                os.path.dirname(os.path.abspath(__file__)),
-            ),
-        ),
-        "pyproject.toml",
-    ),
+    f"{Path(__file__).parent.parent}/pyproject.toml",
     globalns=globals(),
 )
