@@ -19,7 +19,7 @@ name = "Naoki Aoyama"
 [tool.poetry.dependencies]
 python = "3.10.14"
 
-setuptools-git-versioning = "1.13.6"
+setuptools-git-versioning = "2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "~6.29.0"
