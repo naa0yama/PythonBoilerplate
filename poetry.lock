@@ -1568,13 +1568,13 @@ testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jar
 
 [[package]]
 name = "setuptools-git-versioning"
-version = "1.13.6"
+version = "2.0.0"
 description = "Use git repo data for building a version number according PEP-440"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "setuptools-git-versioning-1.13.6.tar.gz", hash = "sha256:75e3e8c4528fa21ca2417a1f222fdaaa4d2ca7d8536c44affad827c6ec9ba0d4"},
-    {file = "setuptools_git_versioning-1.13.6-py3-none-any.whl", hash = "sha256:a57873f91687bf5fe97d28f65fa8c2d03bfe633cf7373c365bb83a87975a0de6"},
+    {file = "setuptools-git-versioning-2.0.0.tar.gz", hash = "sha256:85b5fbe7bda8e9c24bbd9e587a9d4b91129417f4dd3e11e3c0d5f3f835fc4d4d"},
+    {file = "setuptools_git_versioning-2.0.0-py3-none-any.whl", hash = "sha256:72d6e473fc4e86f8563ce411e6c9057766c99aa40b84c862276b48f387eb8e93"},
 ]
 
 [package.dependencies]
@@ -2237,4 +2237,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.14"
-content-hash = "2ae8ed96d48a5b30c019f52dc6b8a6468d81eb659c7d87380d70657fdec8f6e9"
+content-hash = "7eed22be3afed79e89f912c8d2f83e441e302be0e7e26d9650d04ef1480cc6ed"
