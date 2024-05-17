@@ -242,7 +242,7 @@ docslive = "task docs && sphinx-autobuild --watch src docs docs/_build"
 [build-system]
 requires = [
     "poetry-core>=1.0.0",
-    "setuptools-git-versioning<2",
+    "setuptools-git-versioning<3",
     "setuptools>=41",
     "wheel",
 ]
