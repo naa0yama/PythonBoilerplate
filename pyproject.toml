@@ -17,7 +17,7 @@ description = "Python を開発する時用ボイラープレート"
 name = "Naoki Aoyama"
 
 [tool.poetry.dependencies]
-python = "3.10.14"
+python = "3.12.2"
 
 setuptools-git-versioning = "2.0.0"
 
