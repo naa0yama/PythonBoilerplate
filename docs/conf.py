@@ -16,5 +16,4 @@ sys.path.append(f"{Path(__file__).parent.parent}")
 config = SphinxConfig(
     f"{Path(__file__).parent.parent}/pyproject.toml",
     globalns=globals(),
-    style="poetry",
 )

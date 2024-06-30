@@ -5,8 +5,15 @@ description = "Python を開発する時用ボイラープレート"
 authors = [ "Naoki Aoyama" ]
 license = "AGPL-3.0"
 
-[tool.poetry.scripts]
-sample-cli = "pythonboilerplate.cli:main"
+# Sphinx 用 Start
+[project]
+name = "pythonboilerplate"
+version = "0.0.0" # using setuptools-git-versioning
+description = "Python を開発する時用ボイラープレート"
+
+[[project.authors]]
+name = "Naoki Aoyama"
+# Sphinx 用 End
 
 [tool.poetry.dependencies]
 python = "3.10.14"
@@ -27,6 +34,10 @@ sphinx = "~7.3.0"
 sphinx-autobuild = "~2024.4.0"
 sphinx-pyproject = "~0.3.0"
 
+[tool.poetry.group.linting.dependencies]
+mypy = "~1.10.0"
+ruff = "^0.4.0"
+
 [tool.poetry.group.tests.dependencies]
 pytest = "~8.2.0"
 pytest-azurepipelines = "~1.0.4"
@@ -36,9 +47,8 @@ pytest-mock = "~3.14.0"
 [tool.poetry.group.types.dependencies]
 types-requests = "~2.28.11.8"
 
-[tool.poetry.group.linting.dependencies]
-mypy = "~1.10.0"
-ruff = "^0.4.0"
+[tool.poetry.scripts]
+sample-cli = "pythonboilerplate.cli:main"
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
