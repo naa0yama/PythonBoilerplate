@@ -237,21 +237,10 @@
    * Extension: Ansible */
   "redhat.telemetry.enabled": false,
   /*****************************************************************************
-   * Extension: Coverage Gutters */
-  "coverage-gutters.coverageFileNames": [
-    "lcov.info",
-    "cov.xml",
-    "coverage.xml",
-    "jacoco.xml",
-    "coverage.cobertura.xml"
-  ],
-  "coverage-gutters.ignoredPathGlobs": "**/{.mypy_cache,.pytest_cache,.tox,.venv,node_modules,,vendor,venv}/**",
-  "coverage-gutters.manualCoverageFilePaths": [
-    "${workspaceFolder}/coverage.xml"
-  ],
-  "coverage-gutters.showGutterCoverage": true,
-  "coverage-gutters.showLineCoverage": true,
-  "coverage-gutters.showRulerCoverage": true,
+   * Extension: Code Coverage */
+  "markiscodecoverage.enableDecorations": false,
+  // ${workspaceFolder} に対応非対応
+  "markiscodecoverage.searchCriteria": "coverage.lcov",
   /*****************************************************************************
    * Extension: Markdown All in One */
   "markdown.extension.list.indentationSize": "inherit",

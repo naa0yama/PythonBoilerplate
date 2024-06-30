@@ -1,25 +1,22 @@
 [tool.poetry]
 name = "pythonboilerplate"
-version = "0.0.0" # using setuptools-git-versioning
+version = "0.0.0" # using poetry-dynamic-versioning
 description = "Python を開発する時用ボイラープレート"
 authors = [ "Naoki Aoyama" ]
 license = "AGPL-3.0"
 
-[tool.poetry.scripts]
-sample-cli = "pythonboilerplate.cli:main"
-
-# sphinx 用
+# Sphinx 用 Start
 [project]
 name = "pythonboilerplate"
-version = "0.0.0" # using setuptools-git-versioning
+version = "0.0.0" # using poetry-dynamic-versioning
 description = "Python を開発する時用ボイラープレート"
+
 [[project.authors]]
 name = "Naoki Aoyama"
+# Sphinx 用 End
 
 [tool.poetry.dependencies]
 python = "3.10.14"
-
-setuptools-git-versioning = "2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "~6.29.0"
@@ -35,6 +32,10 @@ sphinx = "~7.3.0"
 sphinx-autobuild = "~2024.4.0"
 sphinx-pyproject = "~0.3.0"
 
+[tool.poetry.group.linting.dependencies]
+mypy = "~1.10.0"
+ruff = "^0.4.0"
+
 [tool.poetry.group.tests.dependencies]
 pytest = "~8.2.0"
 pytest-azurepipelines = "~1.0.4"
@@ -44,9 +45,14 @@ pytest-mock = "~3.14.0"
 [tool.poetry.group.types.dependencies]
 types-requests = "~2.28.11.8"
 
-[tool.poetry.group.linting.dependencies]
-mypy = "~1.10.0"
-ruff = "^0.4.0"
+[tool.poetry.scripts]
+sample-cli = "pythonboilerplate.cli:main"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[tool.poetry-dynamic-versioning.substitution]
+folders = [ { path = "src" } ]
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
@@ -195,12 +201,9 @@ addopts = [
     "--cov-report=term",
     "--cov-report=term-missing",
     "--cov-report=term-missing",
-    "--cov-report=xml",
+    "--cov-report=lcov",
     "--cov-report=html",
 ]
-
-[tool.setuptools-git-versioning]
-enabled = true
 
 [tool.sphinx-pyproject]
 autosummary_generate = true
@@ -242,8 +245,6 @@ docslive = "task docs && sphinx-autobuild --watch src docs docs/_build"
 [build-system]
 requires = [
     "poetry-core>=1.0.0",
-    "setuptools-git-versioning<3",
-    "setuptools>=41",
-    "wheel",
+    "poetry-dynamic-versioning>=1.0.0,<2.0.0",
 ]
-build-backend = "setuptools.build_meta"
+build-backend = "poetry_dynamic_versioning.backend"

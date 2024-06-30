@@ -422,6 +422,7 @@ docs/
 !docs/conf.py
 
 # pytest-azurepipelines
+**/coverage.lcov
 **/test-output.xml
 
 # Unknown

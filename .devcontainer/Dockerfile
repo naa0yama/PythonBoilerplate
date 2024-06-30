@@ -47,12 +47,14 @@ RUN set -eux && \
     passwd -d vscode && \
     echo -e "vscode\tALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode
 
-RUN set -eux && \
-    pip install "poetry==${POETRY_VERSION}" && \
-    type poetry
-
 # User lavel settings
 USER vscode
+ENV PATH $PATH:/home/vscode/.local/bin
+RUN set -eux && \
+    pip install --user "poetry==${POETRY_VERSION}" && \
+    pip install --user poetry-dynamic-versioning && \
+    type poetry
+
 RUN set -eux && \
     /usr/bin/fish -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher' && \
     /usr/bin/fish -c 'fisher install oh-my-fish/theme-bobthefish'
