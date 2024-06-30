@@ -8,8 +8,9 @@
 from logging import INFO
 from logging import getLogger
 
+from pythonboilerplate._version import __version__
+
 # Third Party Library
-import setuptools_git_versioning
 
 logger = getLogger(__name__)
 logger.setLevel(INFO)
@@ -21,7 +22,7 @@ def main() -> None:
 
     Logger output version.
     """
-    logger.error(setuptools_git_versioning.get_version())
+    logger.error(__version__)
 
 
 # %%

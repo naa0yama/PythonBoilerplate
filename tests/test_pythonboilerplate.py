@@ -7,8 +7,8 @@
 from logging import ERROR
 
 import pytest
+from pythonboilerplate._version import __version__
 from pythonboilerplate.cli import main
-import setuptools_git_versioning
 
 
 def test_main(caplog: pytest.LogCaptureFixture) -> None:
@@ -18,5 +18,5 @@ def test_main(caplog: pytest.LogCaptureFixture) -> None:
     assert (
         "pythonboilerplate.cli",
         ERROR,
-        f"{setuptools_git_versioning.get_version()}",
+        f"{__version__}",
     ) in caplog.record_tuples
