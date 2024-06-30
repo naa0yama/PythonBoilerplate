@@ -192,17 +192,17 @@ scripts_are_modules = true
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = [
-    "-r sfp",
-    "--verbose",
-    "--verbose",
-    "--durations=0",
-    "--cov=src",
     "--cov-branch",
-    "--cov-report=term",
-    "--cov-report=term-missing",
-    "--cov-report=term-missing",
-    "--cov-report=lcov",
     "--cov-report=html",
+    "--cov-report=lcov",
+    "--cov-report=term-missing",
+    "--cov-report=term-missing",
+    "--cov-report=term",
+    "--cov-report=xml",
+    "--cov=src",
+    "--durations=0",
+    "--verbose",
+    "-r sfp",
 ]
 
 [tool.sphinx-pyproject]

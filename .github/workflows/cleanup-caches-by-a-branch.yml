@@ -1,10 +1,10 @@
 ---
-name: cleanup caches by a branch
-on: # yamllint disable-line rule:truthy
+name: Cleanup caches by a branch
+on:
   pull_request:
     types:
       - closed
-  workflow_dispatch: # yamllint disable-line rule:empty-values
+  workflow_dispatch: {}
 
 jobs:
   cleanup:
