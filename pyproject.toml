@@ -8,14 +8,6 @@ license = "AGPL-3.0"
 [tool.poetry.scripts]
 sample-cli = "pythonboilerplate.cli:main"
 
-# sphinx 用
-[project]
-name = "pythonboilerplate"
-version = "0.0.0" # using setuptools-git-versioning
-description = "Python を開発する時用ボイラープレート"
-[[project.authors]]
-name = "Naoki Aoyama"
-
 [tool.poetry.dependencies]
 python = "3.10.14"
 
