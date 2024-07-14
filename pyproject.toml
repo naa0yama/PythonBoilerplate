@@ -19,7 +19,6 @@ name = "Naoki Aoyama"
 python = "3.10.14"
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "~6.29.0"
 pip = "^24.0.0"
 pre-commit = "~3.7.0"
 taskipy = "~1.13.0"

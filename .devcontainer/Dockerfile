@@ -54,7 +54,3 @@ RUN set -eux && \
     pip install --user "poetry==${POETRY_VERSION}" && \
     pip install --user poetry-dynamic-versioning && \
     type poetry
-
-RUN set -eux && \
-    /usr/bin/fish -c 'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher' && \
-    /usr/bin/fish -c 'fisher install oh-my-fish/theme-bobthefish'

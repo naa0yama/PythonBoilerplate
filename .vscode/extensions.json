@@ -2,10 +2,8 @@
   "recommendations": [
     "charliermarsh.ruff", //                       Ruff
     "christian-kohler.path-intellisense", //       Path Intellisense
+    "Continue.continue", //                        Continue - Codestral, Claude, and more
     "DavidAnson.vscode-markdownlint", //           markdownlint
-    "docsmsft.docs-images", //                     docs-images
-    "docsmsft.docs-markdown", //                   learn-markdown
-    "docsmsft.docs-preview", //                    learn-preview
     "eamodio.gitlens", //                          GitLens — Git supercharged
     "esbenp.prettier-vscode", //                   Prettier - Code formatter
     "github.vscode-github-actions", //             GitHub Actions
@@ -16,7 +14,6 @@
     "ms-python.mypy-type-checker", //              Mypy Type Checker
     "ms-python.python", //                         Python
     "ms-python.vscode-pylance", //                 Pylance
-    "ms-toolsai.jupyter", //                       Jupyter
     "ms-vscode-remote.remote-containers", //       Dev Containers
     "ms-vscode-remote.remote-wsl", //              WSL
     "njpwerner.autodocstring", //                  autoDocstring - Python Docstring Generator
