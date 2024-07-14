@@ -224,6 +224,7 @@
     "markSection2AndTakeDiff": true,
     "togglePreComparisonTextNormalizationRules": true
   },
+  "partialDiff.enableTelemetry": false,
   /*****************************************************************************
    * Extension: Prettier - Code formatter */
   "prettier.enable": true,
@@ -241,6 +242,9 @@
   "markiscodecoverage.enableDecorations": false,
   // ${workspaceFolder} に対応非対応
   "markiscodecoverage.searchCriteria": "coverage.lcov",
+  /*****************************************************************************
+   * Extension: Continue */
+  "continue.telemetryEnabled": false,
   /*****************************************************************************
    * Extension: Markdown All in One */
   "markdown.extension.list.indentationSize": "inherit",
