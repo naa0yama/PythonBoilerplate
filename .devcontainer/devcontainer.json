@@ -38,6 +38,7 @@
         "ruiquelhas.vscode-lowercase", //              lowercase
         "ruiquelhas.vscode-uppercase", //              uppercase
         "ryu1kn.partial-diff", //                      Partial Diff
+        "tamasfe.even-better-toml", //                 Even Better TOML
         "usernamehw.errorlens", //                     Error Lens
         "wholroyd.jinja", //                           Jinja
         "yzhang.markdown-all-in-one" //                Markdown All in One
