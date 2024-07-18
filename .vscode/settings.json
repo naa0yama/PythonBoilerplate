@@ -83,7 +83,10 @@
     "editor.tabSize": 4
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit"
+    },
     "editor.tabSize": 2
   },
   "[jsonc]": {
@@ -225,10 +228,6 @@
     "togglePreComparisonTextNormalizationRules": true
   },
   "partialDiff.enableTelemetry": false,
-  /*****************************************************************************
-   * Extension: Prettier - Code formatter */
-  "prettier.enable": true,
-  "prettier.singleQuote": false,
   /*****************************************************************************
    * Extension: Markdown PDF */
   "markdown-pdf.styles": [
