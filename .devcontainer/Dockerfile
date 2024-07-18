@@ -19,9 +19,9 @@ RUN set -eux && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN set -eux && \
-    apt -y update && \
-    apt -y upgrade && \
-    apt -y install --no-install-recommends \
+    apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get -y install --no-install-recommends \
     bash \
     ca-certificates \
     curl \
@@ -35,8 +35,8 @@ RUN set -eux && \
     wget && \
     \
     # Cleanup \
-    apt -y autoremove && \
-    apt -y clean && \
+    apt-get -y autoremove && \
+    apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Create user
