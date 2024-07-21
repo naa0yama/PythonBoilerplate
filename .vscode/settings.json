@@ -204,6 +204,9 @@
   "notebook.output.textLineLimit": 3000,
   // Extension: Python Test Explorer for Visual Studio Code
   "pythonTestExplorer.testFramework": "pytest",
+  "pythonTestExplorer.testplanArgs": [
+    "-vv"
+  ],
   "testExplorer.addToEditorContextMenu": true,
   "testExplorer.hideWhen": "noTests",
   "testExplorer.mergeSuites": true,
