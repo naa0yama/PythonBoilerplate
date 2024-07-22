@@ -164,6 +164,7 @@ default-section = "third-party"
 # Ref: https://mypy.readthedocs.io/en/stable/config_file.html?highlight=pyproject
 
 ## Import discovery
+mypy_path = [ 'src', 'tests' ]
 ignore_missing_imports = true
 warn_unused_configs = true
 
