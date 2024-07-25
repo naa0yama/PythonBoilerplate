@@ -62,7 +62,7 @@ repos:
         minimum_pre_commit_version: "2.9.2"
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.5.4
+    rev: v0.5.5
     hooks:
       - id: ruff
         args: [--fix]
