@@ -28,6 +28,7 @@ RUN set -eux && \
     fish \
     git \
     gpg-agent \
+    jq \
     nano \
     openssh-client \
     software-properties-common \
