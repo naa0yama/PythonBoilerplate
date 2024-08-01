@@ -80,6 +80,7 @@
     "editor.tabSize": 4,
   },
   "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
     "editor.tabSize": 4
   },
   "[json]": {
@@ -90,7 +91,11 @@
     "editor.tabSize": 2
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit"
+    },
+    "editor.tabSize": 2
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
