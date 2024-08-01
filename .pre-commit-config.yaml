@@ -37,6 +37,18 @@ repos:
       - id: yamllint
         args: ["-c=.yamllint.yml"]
 
+  - repo: https://github.com/biomejs/pre-commit
+    rev: "v0.4.0"
+    hooks:
+      - id: biome-check
+        additional_dependencies: ["@biomejs/biome@1.8.3"]
+        exclude: |
+          (?x)^(
+              .devcontainer/devcontainer.json|
+              .vscode/extensions.json|
+              .vscode/settings.json
+          )$
+
   - repo: https://github.com/python-poetry/poetry
     rev: 1.8.3
     hooks:
