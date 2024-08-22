@@ -7,6 +7,7 @@
 from logging import ERROR
 
 import pytest
+
 from pythonboilerplate._version import __version__
 from pythonboilerplate.cli import main
 
