@@ -1,4 +1,4 @@
-FROM python:3.10.14-slim-bullseye
+FROM python:3.12.6-slim-bullseye
 
 ARG PIP_DEFAULT_TIMEOUT=100 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
