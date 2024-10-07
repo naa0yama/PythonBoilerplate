@@ -20,7 +20,7 @@ python = "3.10.14"
 
 [tool.poetry.group.dev.dependencies]
 pip = "^24.0.0"
-pre-commit = "~3.8.0"
+pre-commit = "~4.0.0"
 taskipy = "~1.13.0"
 tox = "~4.21.0"
 tox-gh-actions = "~3.2.0"
