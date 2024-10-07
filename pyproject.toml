@@ -16,7 +16,7 @@ name = "Naoki Aoyama"
 # Sphinx 用 End
 
 [tool.poetry.dependencies]
-python = "3.10.14"
+python = "3.10.15"
 
 [tool.poetry.group.dev.dependencies]
 pip = "^24.0.0"
