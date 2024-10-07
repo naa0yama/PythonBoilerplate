@@ -4,7 +4,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   run:
-    name: Python ${{ env.PYTHON_VERSION }}
+    name: Python 3
     runs-on: ubuntu-latest
     env:
       OS: ubuntu-latest
