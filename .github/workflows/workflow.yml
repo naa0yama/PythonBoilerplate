@@ -4,25 +4,38 @@ on: [push, workflow_dispatch]
 
 jobs:
   run:
-    name: Python ${{ matrix.python-version }}
+    name: Python ${{ env.PYTHON_VERSION }}
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
-      matrix:
-        python-version:
-          - "3.10"
     env:
       OS: ubuntu-latest
+      PYTHON_VERSION: null
       POETRY_VERSION: null
-      PYTHON: ${{ matrix.python-version }}
 
     steps:
       - uses: actions/checkout@v4.1.7
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: "get version from .tool-versions"
+        run: |
+          set -eux
+
+          cat .tool-versions
+
+          PYTHON_VERSION=$(grep -oP '(?<=python\s).+' .tool-versions)
+          if [ -z "$PYTHON_VERSION" ]; then
+            exit 1
+          fi
+          echo "PYTHON_VERSION=${PYTHON_VERSION}" >> $GITHUB_ENV
+
+          POETRY_VERSION=$(grep -oP '(?<=poetry\s).+' .tool-versions)
+          if [ -z "$POETRY_VERSION" ]; then
+            exit 1
+          fi
+          echo "POETRY_VERSION=${POETRY_VERSION}" >> $GITHUB_ENV
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5.2.0
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ env.PYTHON_VERSION }}
           cache: "pip"
           cache-dependency-path: pyproject.toml
 
@@ -36,24 +49,11 @@ jobs:
             .venv
           # pyproject.toml, poetry.lock and .pre-commit-config.yaml have versioning info that would
           # impact the tox environment.
-          key: tox-${{ matrix.python-version }}-${{ hashFiles(
+          key: tox-${{ env.PYTHON_VERSION }}-${{ hashFiles(
             'pyproject.toml',
             'poetry.lock',
             '.pre-commit-config.yaml',
             'tox.ini') }}
-
-      - name: "get poetry version from .tool-versions"
-        run: |
-          set -eux
-
-          cat .tool-versions
-
-          POETRY_VERSION=$(grep -oP '(?<=poetry\s).+' .tool-versions)
-          if [ -z "$POETRY_VERSION" ]; then
-            exit 1
-          fi
-
-          echo "POETRY_VERSION=${POETRY_VERSION}" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
@@ -84,6 +84,6 @@ jobs:
           fail_ci_if_error: true # optional (default = false)
           file: ./coverage.xml
           flags: pytest
-          env_vars: OS,PYTHON
+          env_vars: OS,PYTHON_VERSION
           token: ${{ secrets.CODECOV_TOKEN }} # required
           verbose: true # optional (default = false)
