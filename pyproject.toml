@@ -33,7 +33,7 @@ sphinx-pyproject = "~0.3.0"
 
 [tool.poetry.group.linting.dependencies]
 mypy = "~1.13.0"
-ruff = "^0.6.0"
+ruff = "^0.7.0"
 
 [tool.poetry.group.tests.dependencies]
 pytest = "~8.3.0"
