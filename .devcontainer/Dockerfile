@@ -6,7 +6,9 @@ ARG PIP_DEFAULT_TIMEOUT=100 \
     PYTHONFAULTHANDLER=1 \
     PYTHONHASHSEED=random \
     PYTHONUNBUFFERED=1 \
-    DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive \
+    \
+    POETRY_VERSION=1.8.2
 
 ENV TZ=Asia/Tokyo
 
@@ -57,6 +59,6 @@ RUN set -eux && \
 USER vscode
 ENV PATH $PATH:/home/vscode/.local/bin
 RUN set -eux && \
-    pip install --user "poetry==$(grep -oP '(?<=poetry\s).+' .tool-versions)" && \
+    pip install --user "poetry==${POETRY_VERSION}" && \
     pip install --user poetry-dynamic-versioning && \
     type poetry
