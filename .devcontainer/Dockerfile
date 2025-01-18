@@ -55,8 +55,10 @@ RUN set -eux && \
 
 # User lavel settings
 USER vscode
+COPY ../.tool-versions .tool-versions
 ENV PATH $PATH:/home/vscode/.local/bin
 RUN set -eux && \
     pip install --user "poetry==$(grep -oP '(?<=poetry\s).+' .tool-versions)" && \
     pip install --user poetry-dynamic-versioning && \
-    type poetry
+    type poetry && \
+    rm .tool-versions
