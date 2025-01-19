@@ -1,4 +1,4 @@
-FROM python:3.10.14-slim-bullseye
+FROM python:3.10.14-slim-bookworm
 
 ARG PIP_DEFAULT_TIMEOUT=100 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
@@ -6,9 +6,7 @@ ARG PIP_DEFAULT_TIMEOUT=100 \
     PYTHONFAULTHANDLER=1 \
     PYTHONHASHSEED=random \
     PYTHONUNBUFFERED=1 \
-    DEBIAN_FRONTEND=noninteractive \
-    \
-    POETRY_VERSION=1.8.2
+    DEBIAN_FRONTEND=noninteractive
 
 ENV TZ=Asia/Tokyo
 
@@ -42,8 +40,8 @@ RUN set -eux && \
 
 # Create user
 RUN set -eux && \
-    groupadd --gid 1000 vscode && \
-    useradd -s /bin/bash --uid 1000 --gid 1000 -m vscode && \
+    groupadd --gid 60001 vscode && \
+    useradd -s /bin/bash --uid 60001 --gid 60001 -m vscode && \
     echo vscode:password | chpasswd && \
     passwd -d vscode && \
     echo -e "vscode\tALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/vscode
@@ -57,8 +55,10 @@ RUN set -eux && \
 
 # User lavel settings
 USER vscode
-ENV PATH $PATH:/home/vscode/.local/bin
+COPY --chown=vscode --chmod=644 .tool-versions /tmp/.tool-versions
+ENV PATH=$PATH:/home/vscode/.local/bin
 RUN set -eux && \
-    pip install --user "poetry==${POETRY_VERSION}" && \
+    pip install --user "poetry==$(grep -oP '(?<=poetry\s).+' /tmp/.tool-versions)" && \
     pip install --user poetry-dynamic-versioning && \
-    type poetry
+    type poetry && \
+    rm -f /tmp/.tool-versions
