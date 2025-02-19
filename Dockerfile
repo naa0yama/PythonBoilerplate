@@ -1,4 +1,4 @@
-FROM python:3.10.14-slim-bookworm
+FROM python:3.12.8-slim-bookworm
 
 ARG PIP_DEFAULT_TIMEOUT=100 \
     PIP_DISABLE_PIP_VERSION_CHECK=on \
@@ -53,7 +53,7 @@ RUN set -eux && \
     chmod +x /usr/local/bin/biome && \
     type -p biome
 
-# User lavel settings
+# User level settings
 USER vscode
 COPY --chown=vscode --chmod=644 .tool-versions /tmp/.tool-versions
 ENV PATH=$PATH:/home/vscode/.local/bin
