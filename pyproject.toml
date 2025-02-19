@@ -20,7 +20,7 @@ python = "3.10.14"
 
 [tool.poetry.group.dev.dependencies]
 pip = "^24.0.0"
-pre-commit = "~4.0.0"
+pre-commit = "~4.1.0"
 taskipy = "~1.14.0"
 tox = "~4.23.0"
 tox-gh-actions = "~3.2.0"
@@ -32,7 +32,7 @@ sphinx-autobuild = "~2024.10.0"
 sphinx-pyproject = "~0.3.0"
 
 [tool.poetry.group.linting.dependencies]
-mypy = "~1.13.0"
+mypy = "~1.15.0"
 ruff = "^0.8.0"
 
 [tool.poetry.group.tests.dependencies]
