@@ -15,11 +15,14 @@ def test_pyproj() -> None:
         __config: dict = load(__stream)
 
     """project name."""
-    assert __config["tool"]["poetry"]["name"] == __config["project"]["name"]
+    assert (
+        f"{__config['project']['name']}.cli:main" == __config["project"]["scripts"]["sample-cli"]
+    )
+    assert (
+        f"src/{__config['project']['name']}"
+        == __config["tool"]["sphinx-pyproject"]["package_root"]
+    )
+    assert __config["project"]["name"] == __config["tool"]["sphinx-pyproject"]["project"]
 
     """version."""
-    assert __config["tool"]["poetry"]["version"] == "0.0.0"
     assert __config["project"]["version"] == "0.0.0"
-
-    """name."""
-    assert __config["tool"]["poetry"]["description"] == __config["project"]["description"]

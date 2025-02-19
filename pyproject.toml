@@ -7,7 +7,7 @@ authors = [
     { name = "Naoki Aoyama" }
 ]
 readme = "README.md"
-requires-python = "~3.12"
+requires-python = "~=3.12"
 
 [project.scripts]
 sample-cli = "pythonboilerplate.cli:main"
