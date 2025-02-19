@@ -53,7 +53,7 @@ RUN set -eux && \
     chmod +x /usr/local/bin/biome && \
     type -p biome
 
-# User lavel settings
+# User level settings
 USER vscode
 COPY --chown=vscode --chmod=644 .tool-versions /tmp/.tool-versions
 ENV PATH=$PATH:/home/vscode/.local/bin
