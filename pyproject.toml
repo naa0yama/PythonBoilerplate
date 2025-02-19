@@ -1,22 +1,19 @@
-[tool.poetry]
-name = "pythonboilerplate"
-version = "0.0.0"                      # using poetry-dynamic-versioning
-description = "Python を開発する時用ボイラープレート"
-authors = ["Naoki Aoyama"]
-license = "AGPL-3.0"
-
-# Sphinx 用 Start
 [project]
 name = "pythonboilerplate"
 version = "0.0.0"                      # using poetry-dynamic-versioning
 description = "Python を開発する時用ボイラープレート"
+license = "AGPL-3.0"
+authors = [
+    { name = "Naoki Aoyama" }
+]
+readme = "README.md"
+requires-python = "~3.12"
 
-[[project.authors]]
-name = "Naoki Aoyama"
-# Sphinx 用 End
+[project.scripts]
+sample-cli = "pythonboilerplate.cli:main"
 
-[tool.poetry.dependencies]
-python = "~3.12"
+[tool.poetry]
+requires-poetry = ">=2.0"
 
 [tool.poetry.group.dev.dependencies]
 pip = "^25.0.0"
@@ -44,8 +41,8 @@ pytest-mock = "~3.14.0"
 [tool.poetry.group.types.dependencies]
 types-requests = "~2.28.11.8"
 
-[tool.poetry.scripts]
-sample-cli = "pythonboilerplate.cli:main"
+[tool.poetry.requires-plugins]
+poetry-plugin-shell = ">1.0"
 
 [tool.poetry-dynamic-versioning]
 enable = true
