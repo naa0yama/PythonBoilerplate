@@ -204,9 +204,8 @@
 	"testExplorer.useNativeTesting": false,
 	/*****************************************************************************
 	 * Extension: Ruff */
-	"ruff.importStrategy": "fromEnvironment",
-	"ruff.lint.args": ["--config=${workspaceFolder}/pyproject.toml"],
-	"ruff.showNotifications": "always"
+	"ruff.configuration": "~/.config/custom_ruff_config.toml",
+	"ruff.importStrategy": "fromEnvironment"
 	/*****************************************************************************
 	 * Unknown: */
 }
