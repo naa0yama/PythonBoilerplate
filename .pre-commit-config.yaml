@@ -50,14 +50,14 @@ repos:
           )$
 
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.8.5
+    rev: 2.1.1
     hooks:
       - id: poetry-check
         entry: /bin/sh -c "cd . && poetry check --no-ansi --no-interaction --no-cache"
         pass_filenames: false
         files: ^(.*/)?pyproject\.toml$
       - id: poetry-lock
-        entry: /bin/sh -c "cd . && poetry lock --no-ansi --no-interaction --no-cache --no-update"
+        entry: /bin/sh -c "cd . && poetry lock --no-ansi --no-interaction --no-cache"
         pass_filenames: false
         files: ^(.*/)?(poetry\.lock|pyproject\.toml)$
 
@@ -88,7 +88,7 @@ repos:
         entry: /bin/sh -c "cd . && .venv/bin/pytest"
         args: ["-c", "pyproject.toml"]
         stages:
-          - "push"
+          - "pre-push"
         language: system
         pass_filenames: false
         always_run: true
