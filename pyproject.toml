@@ -19,7 +19,7 @@ name = "Naoki Aoyama"
 python = "~3.12"
 
 [tool.poetry.group.dev.dependencies]
-pip = "^24.0.0"
+pip = "^25.0.0"
 pre-commit = "~4.1.0"
 taskipy = "~1.14.0"
 tox = "~4.24.0"
