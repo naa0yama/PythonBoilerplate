@@ -20,7 +20,7 @@ pip = "^25.0.0"
 pre-commit = "~4.1.0"
 taskipy = "~1.14.0"
 tox = "~4.24.0"
-tox-gh-actions = "~3.2.0"
+tox-gh-actions = "~3.3.0"
 
 [tool.poetry.group.docs.dependencies]
 furo = "~2024.8.0"
