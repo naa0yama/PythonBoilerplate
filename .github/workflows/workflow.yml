@@ -82,7 +82,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           fail_ci_if_error: true # optional (default = false)
-          file: ./coverage.xml
+          files: ./coverage.xml
           flags: pytest
           env_vars: OS,PYTHON_VERSION
           token: ${{ secrets.CODECOV_TOKEN }} # required
