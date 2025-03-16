@@ -4,22 +4,27 @@
 # %%
 """Command line tool."""
 
-# Standard Library
 from logging import INFO
+from logging import StreamHandler
 from logging import getLogger
 
 from pythonboilerplate._version import __version__
 
-# Third Party Library
-
 logger = getLogger(__name__)
 logger.setLevel(INFO)
 
+handler = StreamHandler()
+handler.setLevel(INFO)
+logger.addHandler(handler)
 
-# %%
+
 def main() -> None:
     """Main function.
 
     Logger output version.
     """
-    logger.error(__version__)
+    logger.info(__version__)
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()

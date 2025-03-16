@@ -12,43 +12,16 @@ Python で開発する時用ボイラープレート
 
 GitHub で管理すると tag を付けたらそのバージョンでリリースしたくなる。  
 が、通常の方法では `pyproject.toml` の複数 version 箇所を書き換える必要が出る。  
-これを回避するため、[mtkennerly/poetry-dynamic-versioning](https://github.com/mtkennerly/poetry-dynamic-versioning) を利用する。
+これを回避するため、[pypa/setuptools-scm](https://github.com/pypa/setuptools-scm/tree/main) を利用する。
 
-本レポジトリーの `.devcontainer/Dockerfile` には組み込み済みだが、手動でやる場合は下記のようにする  
-
-```bash
-# pip の場合
-pip install --user poetry-dynamic-versioning
-
-# asdf の場合
-poetry self add "poetry-dynamic-versioning[plugin]"
-
-```
-
-どちらも正しく導入出来ると下記のように `poetry self show plugins` で確認出来る
-
-```bash
-> poetry self show plugins
-
-  - poetry-dynamic-versioning (1.4.0) Plugin for Poetry to enable dynamic versioning based on VCS tags
-      1 application plugin
-
-      Dependencies
-        - dunamai (>=1.21.0,<2.0.0)
-        - jinja2 (>=2.11.1,<4)
-        - poetry (>=1.2.0,<2.0.0)
-        - tomlkit (>=0.4)
-
-  - poetry-plugin-export (1.8.0) Poetry plugin to export the dependencies to various formats
-      1 application plugin
-
-      Dependencies
-        - poetry (>=1.8.0,<3.0.0)
-        - poetry-core (>=1.7.0,<3.0.0)
-
-```
+build 時の設定で [Nuitka](https://github.com/Nuitka/Nuitka) と併用するため `task build` にまとめた
 
 ## Memo
+
+* 2025-03-15
+  * Poetry 2.x にアップグレード
+  * poetry-dynamic-versioning を廃止
+  * Nuitka を導入
 
 * 2024-05-09
   * Ruff

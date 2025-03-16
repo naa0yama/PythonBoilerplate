@@ -415,11 +415,15 @@ functions/
 .vault_password
 
 # local debug
+src/pythonboilerplate/_version.py
 tmp.**
 
 # sphinx
 docs/
 !docs/conf.py
+
+# nuitka
+nuitka-crash-report.xml
 
 # pytest-azurepipelines
 **/coverage.lcov

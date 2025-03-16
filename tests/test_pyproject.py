@@ -23,6 +23,3 @@ def test_pyproj() -> None:
         == __config["tool"]["sphinx-pyproject"]["package_root"]
     )
     assert __config["project"]["name"] == __config["tool"]["sphinx-pyproject"]["project"]
-
-    """version."""
-    assert __config["project"]["version"] == "0.0.0"
