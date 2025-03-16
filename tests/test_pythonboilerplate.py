@@ -4,7 +4,7 @@
 # %%
 """pythonboilerplate."""
 
-from logging import ERROR
+from logging import INFO
 
 import pytest
 
@@ -18,6 +18,6 @@ def test_main(caplog: pytest.LogCaptureFixture) -> None:
 
     assert (
         "pythonboilerplate.cli",
-        ERROR,
+        INFO,
         f"{__version__}",
     ) in caplog.record_tuples

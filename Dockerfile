@@ -21,17 +21,19 @@ RUN set -eux && \
     apt-get -y upgrade && \
     apt-get -y install --no-install-recommends \
     bash \
+    build-essential \
     ca-certificates \
     curl \
-    fish \
     git \
     gpg-agent \
     jq \
     nano \
     openssh-client \
+    patchelf \
     software-properties-common \
     sudo \
-    wget && \
+    wget \
+    && \
     \
     # Cleanup \
     apt-get -y autoremove && \
@@ -59,6 +61,5 @@ COPY --chown=vscode --chmod=644 .tool-versions /tmp/.tool-versions
 ENV PATH=$PATH:/home/vscode/.local/bin
 RUN set -eux && \
     pip install --user "poetry==$(grep -oP '(?<=poetry\s).+' /tmp/.tool-versions)" && \
-    pip install --user poetry-dynamic-versioning && \
     type poetry && \
     rm -f /tmp/.tool-versions
