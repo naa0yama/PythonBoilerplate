@@ -809,13 +809,13 @@ files = [
 
 [[package]]
 name = "nuitka"
-version = "2.7.5"
+version = "2.7.6"
 description = "Python compiler with full language support and CPython compatibility"
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "Nuitka-2.7.5.tar.gz", hash = "sha256:37d0f8b59fbffb7c9f882f6a6410d40fb9d8f312c33951aa324f84677874e2a1"},
+    {file = "Nuitka-2.7.6.tar.gz", hash = "sha256:8ad661b57dec9753ca93c59232bf40bc3288d79da46492cc574cfca640d81d13"},
 ]
 
 [package.dependencies]
